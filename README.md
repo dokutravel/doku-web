@@ -63,22 +63,25 @@ npm run typecheck && npm run lint && npm run build
 
 Same three steps run in CI (`.github/workflows/ci.yml`).
 
-## Coming-soon gate
+## Coming-soon mode
 
-With `SITE_MODE=coming-soon` every route shows the under-construction page
-(waitlist included). The real site unlocks with `https://dokutravel.com/?preview=<PREVIEW_KEY>`
-— sets a 30-day cookie, so testing in prod works on the real domain. Gated
-responses carry `X-Robots-Tag: noindex`. To launch: change `SITE_MODE` in Vercel
-(env change + redeploy of envs, no code change). Logic lives in `src/proxy.ts`.
+`SITE_MODE=coming-soon` (set **only on Vercel's Production environment** until
+launch) makes marketing routes show the under-construction page — waitlist
+included, `X-Robots-Tag: noindex`. The **legal pages stay public**
+(`/privacy`, `/terms`, `/account-deletion`, `/support`): the app and the store
+listings link to them, so the web launches before the product does. Future
+functional routes (e.g. `/invite/[token]`) join the public list in
+`PUBLIC_PATHS` (`src/proxy.ts`). **Launching the site = removing the env var.**
 
 ## Environments
 
-- **Production**: `main` → `dokutravel.com`. Env: prod Supabase + `SITE_MODE=coming-soon`
-  until launch.
-- **Previews**: every branch/PR gets a Vercel preview URL. Point the Preview
-  environment's `SUPABASE_URL`/`SUPABASE_ANON_KEY` at the dev project (DokuBE-dev)
-  so test leads never land in prod. Optionally map `dev.dokutravel.com` to a `dev`
-  branch in Vercel's domain settings.
+- **Production** — `main` → `dokutravel.com`: under construction + public legal
+  pages (via `SITE_MODE=coming-soon`) until launch. Prod Supabase env vars.
+- **Dev** — `dev` branch → `dev.dokutravel.com`: the full site, always (no
+  `SITE_MODE`). Assign the domain to the branch in Vercel → Settings → Domains.
+  Point the Preview environment's Supabase vars at DokuBE-dev so test leads never
+  land in prod. Non-production deploys send `noindex` automatically.
+- **PR previews** — every branch/PR gets an auto Vercel URL with the Preview env.
 
 ## Deploy
 

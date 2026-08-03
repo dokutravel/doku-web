@@ -35,6 +35,12 @@ export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Pr
     },
     description: t.meta.homeDescription,
     applicationName: 'Doku',
+    // Only the production domain gets indexed — dev.dokutravel.com and Vercel
+    // preview URLs must never compete with it in search results.
+    robots:
+      process.env.VERCEL_ENV && process.env.VERCEL_ENV !== 'production'
+        ? { index: false, follow: false }
+        : undefined,
   };
 }
 
