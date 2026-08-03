@@ -1,0 +1,283 @@
+@import "tailwindcss";
+
+/*
+ * Doku design tokens, ported from the app repo.
+ * SOURCE OF TRUTH: doku/src/constants/theme.ts + doku/src/constants/type-tokens.json
+ * (see README "Design system"). A palette change there is synced here by hand.
+ *
+ * Rules carried over from DESIGN.md:
+ * - `brand` is a FILL-ONLY color (buttons, badges) — always paired with `on-brand`.
+ *   Green as text/icon uses `brand-strong`, the only variant that passes APCA.
+ * - `link` is deliberately separate from brand.
+ * - Hierarchy is carried by SIZE, not weight: Manrope 400 for reading content,
+ *   600 for interface elements. Never other weights.
+ */
+
+:root {
+  --background: #faf8f2;
+  --surface: #ffffff;
+  --surface-sunken: #eaeaea;
+  --background-element: #f2f1ee;
+  --background-selected: #f0f6e5;
+  --text: #141414;
+  --text-secondary: #555555;
+  --link: #224262;
+  --border: #eaeaea;
+  --card-border: #d0d0d0;
+  --input-border: #acacac;
+
+  --brand: #aed951;
+  --on-brand: #141414;
+  --brand-soft: #f0f6e5;
+  --brand-strong: #3b4c1e;
+
+  --flight: #1c6bc0;
+  --flight-soft: #e6f1fb;
+  --hotel: #0f7a5f;
+  --hotel-soft: #e1f5ee;
+  --transport: #c2521f;
+  --transport-soft: #faece7;
+  --activity: #7b3fa5;
+  --activity-soft: #f3ebfa;
+  --insurance: #985f0c;
+  --insurance-soft: #faeeda;
+  --other: #5b6066;
+  --other-soft: #f0f1f3;
+
+  --danger: #772b22;
+  --danger-soft: #f5e7e5;
+  --success: #2d3a18;
+  --success-soft: #f0f6e5;
+  --warning: #794b15;
+  --warning-soft: #f9eedc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #141414;
+    --surface: #202020;
+    --surface-sunken: #181818;
+    --background-element: #272727;
+    --background-selected: #2d3a18;
+    --text: #faf8f2;
+    --text-secondary: #acacac;
+    --link: #aac9e4;
+    --border: #2b2b2b;
+    --card-border: #393939;
+    --input-border: #555555;
+
+    --brand: #aed951;
+    --on-brand: #141414;
+    --brand-soft: #3b4c1e;
+    --brand-strong: #aed951;
+
+    --flight: #6fb0f2;
+    --flight-soft: #16243a;
+    --hotel: #5dcaa5;
+    --hotel-soft: #11302a;
+    --transport: #f0997b;
+    --transport-soft: #3a2114;
+    --activity: #c49bf2;
+    --activity-soft: #2b1a3a;
+    --insurance: #f0b45c;
+    --insurance-soft: #33260e;
+    --other: #9ba1a6;
+    --other-soft: #1e1f22;
+
+    --danger: #f37e6d;
+    --danger-soft: #3f1812;
+    --success: #c6e28d;
+    --success-soft: #222c11;
+    --warning: #efba6c;
+    --warning-soft: #39280e;
+  }
+}
+
+@theme inline {
+  --color-*: initial;
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-background-element: var(--background-element);
+  --color-background-selected: var(--background-selected);
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-link: var(--link);
+  --color-border: var(--border);
+  --color-card-border: var(--card-border);
+  --color-input-border: var(--input-border);
+  --color-brand: var(--brand);
+  --color-on-brand: var(--on-brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-strong: var(--brand-strong);
+  --color-flight: var(--flight);
+  --color-flight-soft: var(--flight-soft);
+  --color-hotel: var(--hotel);
+  --color-hotel-soft: var(--hotel-soft);
+  --color-transport: var(--transport);
+  --color-transport-soft: var(--transport-soft);
+  --color-activity: var(--activity);
+  --color-activity-soft: var(--activity-soft);
+  --color-insurance: var(--insurance);
+  --color-insurance-soft: var(--insurance-soft);
+  --color-other: var(--other);
+  --color-other-soft: var(--other-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-white: #ffffff;
+  --color-transparent: transparent;
+
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Type scale from type-tokens.json — text-<token> sets size/line/tracking/weight. */
+  --text-*: initial;
+  --text-display-large: 57px;
+  --text-display-large--line-height: 64px;
+  --text-display-large--letter-spacing: -0.25px;
+  --text-display-large--font-weight: 400;
+  --text-display-medium: 45px;
+  --text-display-medium--line-height: 52px;
+  --text-display-medium--font-weight: 400;
+  --text-display-small: 36px;
+  --text-display-small--line-height: 44px;
+  --text-display-small--font-weight: 400;
+  --text-headline-large: 32px;
+  --text-headline-large--line-height: 40px;
+  --text-headline-large--font-weight: 400;
+  --text-headline-medium: 28px;
+  --text-headline-medium--line-height: 36px;
+  --text-headline-medium--font-weight: 400;
+  --text-headline-small: 24px;
+  --text-headline-small--line-height: 32px;
+  --text-headline-small--font-weight: 400;
+  --text-title-large: 22px;
+  --text-title-large--line-height: 28px;
+  --text-title-large--font-weight: 600;
+  --text-title-medium: 16px;
+  --text-title-medium--line-height: 24px;
+  --text-title-medium--letter-spacing: 0.1px;
+  --text-title-medium--font-weight: 600;
+  --text-title-small: 14px;
+  --text-title-small--line-height: 20px;
+  --text-title-small--letter-spacing: 0.1px;
+  --text-title-small--font-weight: 600;
+  --text-body-large: 16px;
+  --text-body-large--line-height: 24px;
+  --text-body-large--letter-spacing: 0.15px;
+  --text-body-large--font-weight: 400;
+  --text-body-medium: 14px;
+  --text-body-medium--line-height: 20px;
+  --text-body-medium--letter-spacing: 0.15px;
+  --text-body-medium--font-weight: 400;
+  --text-body-small: 12px;
+  --text-body-small--line-height: 16px;
+  --text-body-small--letter-spacing: 0.2px;
+  --text-body-small--font-weight: 400;
+  --text-label-large: 14px;
+  --text-label-large--line-height: 20px;
+  --text-label-large--letter-spacing: 0.1px;
+  --text-label-large--font-weight: 600;
+  --text-label-medium: 12px;
+  --text-label-medium--line-height: 16px;
+  --text-label-medium--letter-spacing: 0.3px;
+  --text-label-medium--font-weight: 600;
+  --text-label-small: 11px;
+  --text-label-small--line-height: 16px;
+  --text-label-small--letter-spacing: 0.3px;
+  --text-label-small--font-weight: 600;
+  --text-button-large: 16px;
+  --text-button-large--line-height: 24px;
+  --text-button-large--letter-spacing: 0.1px;
+  --text-button-large--font-weight: 600;
+  --text-button-medium: 14px;
+  --text-button-medium--line-height: 20px;
+  --text-button-medium--letter-spacing: 0.1px;
+  --text-button-medium--font-weight: 600;
+  --text-button-small: 12px;
+  --text-button-small--line-height: 16px;
+  --text-button-small--letter-spacing: 0.2px;
+  --text-button-small--font-weight: 600;
+
+  /* Radius scale from theme.ts */
+  --radius-*: initial;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* Shadow.card */
+  --shadow-*: initial;
+  --shadow-card: 0 6px 16px 0 rgb(11 18 32 / 0.05);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--brand);
+  color: var(--on-brand);
+}
+
+/* Long-form legal/prose pages: headings and paragraphs follow the type scale
+ * without utility classes on every element. */
+.prose-doku h2 {
+  font-size: var(--text-headline-small);
+  line-height: var(--text-headline-small--line-height);
+  font-weight: 400;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-doku h3 {
+  font-size: var(--text-title-medium);
+  line-height: var(--text-title-medium--line-height);
+  letter-spacing: 0.1px;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-doku p,
+.prose-doku li {
+  font-size: var(--text-body-large);
+  line-height: var(--text-body-large--line-height);
+  letter-spacing: 0.15px;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.prose-doku ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose-doku a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-doku strong {
+  font-weight: 600;
+}
