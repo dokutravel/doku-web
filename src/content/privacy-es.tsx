@@ -27,8 +27,11 @@ export function PrivacyEs() {
           extrae de ellos (fechas, códigos de reserva, horarios, pasajeros, destinos).
         </li>
         <li>
-          <strong>Datos técnicos.</strong> Reportes de errores y fallos (a través de Sentry) y
-          contadores de uso del análisis con IA, que usamos para aplicar los límites del plan.
+          <strong>Datos técnicos.</strong> Reportes de errores y fallos (a través de Sentry),
+          contadores de uso del análisis con IA — que usamos para aplicar los límites del
+          plan — y métricas de uso del producto (a través de PostHog): qué pantallas y
+          funciones se usan, asociadas a un identificador interno aleatorio, nunca a tu
+          nombre, tu email ni al contenido de tus documentos.
         </li>
         <li>
           <strong>En esta web.</strong> Si te anotás en la lista de espera, guardamos tu email
@@ -44,6 +47,23 @@ export function PrivacyEs() {
         <li>Mantener la app estable y diagnosticar errores.</li>
       </ul>
       <p>No vendemos tus datos ni los usamos para publicidad. Punto.</p>
+
+      <h2>Base legal</h2>
+      <ul>
+        <li>
+          <strong>Ejecución del contrato:</strong> guardar, organizar, analizar y sincronizar
+          tus documentos es el servicio que nos pedís al usar Doku.
+        </li>
+        <li>
+          <strong>Interés legítimo:</strong> mantener la app estable (reportes de errores) y
+          entender cómo se usa el producto para mejorarlo (métricas sin datos personales más
+          allá de un identificador interno).
+        </li>
+        <li>
+          <strong>Consentimiento:</strong> anotarte en la lista de espera de esta web y
+          cualquier comunicación que aceptes recibir. Podés retirarlo cuando quieras.
+        </li>
+      </ul>
 
       <h2>Análisis con inteligencia artificial</h2>
       <p>
@@ -61,6 +81,41 @@ export function PrivacyEs() {
         miembros de los viajes con los que se compartió explícitamente.
       </p>
 
+      <h2>Proveedores que nos ayudan a prestar el servicio</h2>
+      <p>
+        No compartimos tus datos con terceros para sus propios fines. Sí usamos estos
+        proveedores (subencargados), que procesan datos únicamente para prestarnos su
+        servicio:
+      </p>
+      <ul>
+        <li>
+          <strong>Supabase</strong> — base de datos, autenticación y almacenamiento de tus
+          archivos.
+        </li>
+        <li>
+          <strong>Google (API de Gemini)</strong> — análisis con IA de los documentos que
+          elegís analizar.
+        </li>
+        <li>
+          <strong>Sentry</strong> — reportes de errores y fallos de la app.
+        </li>
+        <li>
+          <strong>PostHog</strong> — métricas de uso del producto (recibe solo el
+          identificador interno y los eventos de uso, nunca tus documentos ni tu email).
+        </li>
+        <li>
+          <strong>Vercel</strong> — alojamiento de esta web.
+        </li>
+      </ul>
+
+      <h2>Transferencias internacionales</h2>
+      <p>
+        Algunos de estos proveedores procesan datos en Estados Unidos u otros países fuera
+        del tuyo. Cuando eso ocurre, la transferencia se apoya en salvaguardas
+        contractuales, como cláusulas contractuales tipo o los marcos de adecuación
+        vigentes.
+      </p>
+
       <h2>Cuánto tiempo los conservamos</h2>
       <p>
         Mientras tu cuenta exista. Si eliminás un documento, se borra de nuestro
@@ -75,6 +130,13 @@ export function PrivacyEs() {
         <a href="./account-deletion">cómo eliminar tu cuenta</a>. Para cualquier otro pedido
         (acceso, portabilidad, limitación), escribinos a{' '}
         <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+      </p>
+
+      <h2>Menores</h2>
+      <p>
+        Doku no está dirigida a menores de 13 años y no recopilamos sus datos a sabiendas.
+        Si creés que un menor nos dio sus datos, escribinos a{' '}
+        <a href={`mailto:${contactEmail}`}>{contactEmail}</a> y los eliminamos.
       </p>
 
       <h2>Cambios a esta política</h2>

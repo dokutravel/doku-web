@@ -89,6 +89,6 @@ Vercel, `main` branch, domain `dokutravel.com`. Set `SUPABASE_URL` and
 `SUPABASE_ANON_KEY` in the Vercel project env. Before going live:
 
 - [ ] Review the privacy policy & terms wording (drafted, needs Manu's read)
-- [ ] Create the `hola@dokutravel.com` mailbox (or forwarding)
+- [ ] Create the `contact@dokutravel.com` mailbox (or forwarding)
 - [ ] Run `supabase/web_leads.sql` in prod
 - [ ] Point the app + store listings at `/{locale}/privacy` and `/{locale}/account-deletion`

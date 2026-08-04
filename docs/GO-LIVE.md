@@ -17,16 +17,20 @@
 
 En el proyecto → **Settings → Domains**:
 
+> El dominio está en **Cloudflare Registrar**, que obliga a usar los nameservers
+> de Cloudflare — NO se puede delegar a Vercel. El DNS se administra en el
+> dashboard de Cloudflare, y cada registro debe quedar en **DNS only (nube
+> gris)**: con el proxy naranja activado, Vercel no puede emitir su certificado
+> y el dominio queda con SSL/redirects rotos.
+
 1. Agregá `dokutravel.com`.
-   - Vercel te muestra los DNS a configurar en tu registrador (donde compraste
-     el dominio): un registro **A → 76.76.21.21** para el apex, o cambiar los
-     nameservers a los de Vercel (más simple, recomendado).
+   - En Cloudflare → DNS: registro **A** `@` → **76.76.21.21**, modo **DNS only**.
 2. Agregá `www.dokutravel.com` → elegí **Redirect to dokutravel.com** (308).
+   - En Cloudflare: CNAME `www` → `cname.vercel-dns.com`, **DNS only**.
 3. Agregá `dev.dokutravel.com` → tocá **Edit** en esa fila y en **Git Branch**
    poné `dev`. Eso hace que ese subdominio sirva siempre el último deploy de la
    branch `dev` (la web completa, sin gate).
-   - En tu registrador: CNAME `dev` → `cname.vercel-dns.com` (si no usaste los
-     nameservers de Vercel; con nameservers de Vercel no hay que hacer nada).
+   - En Cloudflare: CNAME `dev` → `cname.vercel-dns.com`, **DNS only**.
 
 La propagación de DNS puede tardar de minutos a un par de horas.
 

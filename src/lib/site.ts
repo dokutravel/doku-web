@@ -2,7 +2,7 @@ import type { Locale } from '@/i18n/config';
 
 export const siteUrl = 'https://dokutravel.com';
 
-export const contactEmail = 'hola@dokutravel.com';
+export const contactEmail = 'contact@dokutravel.com';
 
 /** Absolute URL for a localized path, e.g. localeUrl('es', '/privacy'). */
 export function localeUrl(locale: Locale, path = ''): string {
