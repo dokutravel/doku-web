@@ -9,14 +9,23 @@ export function AccountDeletionEn() {
       </p>
 
       <h2>How to delete your account</h2>
+      <p>Directly from the app:</p>
       <ul>
         <li>
-          Email us at <a href={`mailto:${contactEmail}`}>{contactEmail}</a> with the subject{' '}
-          <strong>&quot;Delete account&quot;</strong>, from the same address you use to sign in
-          to Doku (your Google or Apple account).
+          Open Doku → <strong>Profile → Delete account</strong>.
         </li>
-        <li>We confirm the request by email and process the deletion.</li>
+        <li>
+          Type the confirmation word the screen asks for and tap{' '}
+          <strong>&quot;Delete my account&quot;</strong>. Deletion is processed immediately.
+        </li>
       </ul>
+      <p>
+        If you cannot access the app, email us at{' '}
+        <a href={`mailto:${contactEmail}`}>{contactEmail}</a> with the subject{' '}
+        <strong>&quot;Delete account&quot;</strong>, from the same address you use to sign in
+        to Doku (your Google or Apple account). We confirm the request by email and process
+        the deletion.
+      </p>
 
       <h2>What gets deleted</h2>
       <ul>
@@ -26,15 +35,10 @@ export function AccountDeletionEn() {
         <li>Your usage counters and plan data.</li>
       </ul>
       <p>
-        Deletion is completed within <strong>30 days</strong> of confirming the request and is{' '}
-        <strong>irreversible</strong>. Documents you shared into other people&apos;s trips stop
-        being available to them.
-      </p>
-
-      <h2>Note</h2>
-      <p>
-        We are working on letting you delete your account directly from the app (Profile →
-        Delete account). Until then, the email process is the official channel.
+        In-app deletion is immediate; by email it is completed within <strong>30 days</strong>{' '}
+        of confirming the request. Either way it is <strong>irreversible</strong>. Trips you
+        created also disappear for the people you shared them with, and documents you shared
+        into other people&apos;s trips stop being available to them.
       </p>
     </>
   );
