@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
+import { IoAlertCircleOutline, IoConstructOutline } from 'react-icons/io5';
 
 import { AgencyForm } from '@/components/agency-form';
+import { Callout } from '@/components/callout';
 import { Container } from '@/components/container';
 import type { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
@@ -27,11 +29,20 @@ export default async function AgenciesPage({ params }: PageProps<'/[locale]/agen
     <>
       <section className="py-16 sm:py-24">
         <Container className="max-w-3xl">
-          <h1 className="text-headline-large text-text sm:text-display-small">{t.agencies.title}</h1>
+          <span className="inline-flex items-center gap-1.5 rounded-pill bg-warning-soft px-3.5 py-1 text-label-medium uppercase text-warning">
+            <IoConstructOutline size={12} />
+            {t.agencies.underConstructionBadge}
+          </span>
+          <h1 className="mt-5 text-headline-large text-text sm:text-display-small">{t.agencies.title}</h1>
           <p className="mt-4 text-body-large text-text-secondary">{t.agencies.subtitle}</p>
+          <div className="mt-2 text-body-large text-text">
+            <Callout tone="warning" icon={IoAlertCircleOutline}>
+              <p>{t.agencies.underConstructionBody}</p>
+            </Callout>
+          </div>
         </Container>
       </section>
-      <section className="border-t border-border bg-surface py-16 dark:bg-surface-sunken/40">
+      <section className="border-t border-border bg-surface py-16">
         <Container className="max-w-3xl">
           <ul className="grid gap-6 sm:grid-cols-3">
             {t.agencies.bullets.map((bullet) => (

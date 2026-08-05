@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { IoDocumentTextOutline } from 'react-icons/io5';
 
 import { LegalPage } from '@/components/legal-page';
 import { TermsEn } from '@/content/terms-en';
@@ -28,6 +29,8 @@ export default async function TermsPage({ params }: PageProps<'/[locale]/terms'>
   return (
     <LegalPage
       title={t.legal.termsTitle}
+      badgeLabel={t.legal.badgeLegal}
+      badgeIcon={IoDocumentTextOutline}
       updatedLabel={t.legal.lastUpdated}
       updatedDate={UPDATED[locale as Locale]}
     >

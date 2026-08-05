@@ -1,29 +1,37 @@
+import { IoSparkles } from 'react-icons/io5';
+
+import { Callout } from '@/components/callout';
 import { contactEmail } from '@/lib/site';
 
 export function PrivacyEs() {
   return (
     <>
+      <Callout tone="brand" icon={IoSparkles}>
+        <p>
+          La versión corta: tus documentos son tuyos, no vendemos tus datos y no los usamos
+          para publicidad.
+        </p>
+      </Callout>
       <p>
         Doku es una aplicación para organizar documentos de viaje. Esta política explica qué
-        datos recopilamos, para qué los usamos y qué derechos tenés sobre ellos. La versión
-        corta: tus documentos son tuyos, no vendemos tus datos y no los usamos para publicidad.
+        datos recopilamos, para qué los usamos y qué derechos tienes sobre ellos.
       </p>
 
       <h2>Quién es el responsable</h2>
       <p>
         El responsable del tratamiento es el equipo de Doku. Para cualquier consulta sobre tus
-        datos, escribinos a <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+        datos, escríbenos a <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
       </p>
 
       <h2>Qué datos recopilamos</h2>
       <ul>
         <li>
           <strong>Datos de cuenta.</strong> Al iniciar sesión con Google o Apple recibimos tu
-          nombre, tu email y tu foto de perfil. No vemos tu contraseña.
+          nombre, tu email y tu foto de perfil. Nunca vemos tu contraseña.
         </li>
         <li>
-          <strong>Tus documentos.</strong> Los archivos que subís o compartís a la app (PDFs,
-          capturas o fotos de reservas, pasajes, vouchers, pólizas) y los datos que la IA
+          <strong>Tus documentos.</strong> Los archivos que subes o compartes a la app (PDFs,
+          capturas o fotos de reservas, tickets, vouchers, pólizas) y los datos que la IA
           extrae de ellos (fechas, códigos de reserva, horarios, pasajeros, destinos).
         </li>
         <li>
@@ -34,25 +42,26 @@ export function PrivacyEs() {
           nombre, tu email ni al contenido de tus documentos.
         </li>
         <li>
-          <strong>En esta web.</strong> Si te anotás en la lista de espera, guardamos tu email
-          con el único fin de avisarte del lanzamiento. Esta web no usa cookies de seguimiento.
+          <strong>En esta web.</strong> Si te unes a la lista de espera, guardamos tu email
+          con el único fin de anunciarte el lanzamiento. Esta web no usa cookies de
+          seguimiento.
         </li>
       </ul>
 
       <h2>Para qué los usamos</h2>
       <ul>
         <li>Prestar el servicio: guardar tus documentos, organizarlos por viaje y sincronizarlos entre tus dispositivos.</li>
-        <li>Analizar los documentos que vos elegís analizar con IA, para extraer sus datos.</li>
-        <li>Compartir un viaje con las personas que vos invites — solo ven los documentos de ese viaje.</li>
+        <li>Analizar los documentos que tú eliges analizar con IA, para extraer sus datos.</li>
+        <li>Compartir un viaje con las personas que invites — solo ven los documentos de ese viaje.</li>
         <li>Mantener la app estable y diagnosticar errores.</li>
       </ul>
       <p>No vendemos tus datos ni los usamos para publicidad. Punto.</p>
 
-      <h2>Base legal</h2>
+      <h2>Bases legales</h2>
       <ul>
         <li>
-          <strong>Ejecución del contrato:</strong> guardar, organizar, analizar y sincronizar
-          tus documentos es el servicio que nos pedís al usar Doku.
+          <strong>Ejecución de un contrato:</strong> guardar, organizar, analizar y
+          sincronizar tus documentos es el servicio que solicitas al usar Doku.
         </li>
         <li>
           <strong>Interés legítimo:</strong> mantener la app estable (reportes de errores) y
@@ -60,20 +69,21 @@ export function PrivacyEs() {
           allá de un identificador interno).
         </li>
         <li>
-          <strong>Consentimiento:</strong> anotarte en la lista de espera de esta web y
-          cualquier comunicación que aceptes recibir. Podés retirarlo cuando quieras.
+          <strong>Consentimiento:</strong> unirte a la lista de espera de esta web y
+          cualquier comunicación que aceptes recibir. Puedes retirarlo en cualquier momento.
         </li>
       </ul>
 
       <h2>Análisis con inteligencia artificial</h2>
       <p>
-        Cuando analizás un documento, este se envía de forma segura a la API de Google Gemini
-        para extraer sus datos. Según los términos de la API paga de Google, los documentos
-        procesados no se usan para entrenar sus modelos. El análisis ocurre solo cuando vos lo
-        pedís (o al compartir un archivo con la app), nunca sobre documentos que no subiste.
+        Cuando analizas un documento, este se envía de forma segura a la API de Gemini de
+        Google para extraer sus datos. Según los términos de la API de pago de Google, los
+        documentos procesados no se usan para entrenar sus modelos. El análisis solo ocurre
+        cuando lo solicitas (o cuando compartes un archivo a la app), nunca sobre documentos
+        que no subiste.
       </p>
 
-      <h2>Dónde y cómo se guardan</h2>
+      <h2>Dónde y cómo se almacenan</h2>
       <p>
         Tus documentos y datos se almacenan en Supabase (base de datos y almacenamiento de
         archivos), cifrados en tránsito (TLS) y en reposo. El acceso está restringido por
@@ -94,7 +104,7 @@ export function PrivacyEs() {
         </li>
         <li>
           <strong>Google (API de Gemini)</strong> — análisis con IA de los documentos que
-          elegís analizar.
+          eliges analizar.
         </li>
         <li>
           <strong>Sentry</strong> — reportes de errores y fallos de la app.
@@ -111,38 +121,37 @@ export function PrivacyEs() {
       <h2>Transferencias internacionales</h2>
       <p>
         Algunos de estos proveedores procesan datos en Estados Unidos u otros países fuera
-        del tuyo. Cuando eso ocurre, la transferencia se apoya en salvaguardas
-        contractuales, como cláusulas contractuales tipo o los marcos de adecuación
-        vigentes.
+        del tuyo. Cuando eso ocurre, la transferencia se apoya en salvaguardas contractuales,
+        como cláusulas contractuales tipo o los marcos de adecuación aplicables.
       </p>
 
       <h2>Cuánto tiempo los conservamos</h2>
       <p>
-        Mientras tu cuenta exista. Si eliminás un documento, se borra de nuestro
-        almacenamiento. Si eliminás tu cuenta, se eliminan tu cuenta, tus documentos, tus
-        viajes y los datos extraídos dentro de los 30 días.
+        Mientras tu cuenta exista. Si eliminas un documento, se borra de nuestro
+        almacenamiento. Si eliminas tu cuenta, tu cuenta, tus documentos, tus viajes y los
+        datos extraídos se eliminan dentro de los 30 días.
       </p>
 
       <h2>Tus derechos</h2>
       <p>
-        Podés acceder a tus datos y corregirlos directamente en la app (cada campo extraído es
-        editable). Podés pedir la eliminación completa de tu cuenta y tus datos — ver{' '}
-        <a href="./account-deletion">cómo eliminar tu cuenta</a>. Para cualquier otro pedido
-        (acceso, portabilidad, limitación), escribinos a{' '}
+        Puedes acceder a tus datos y corregirlos directamente en la app (cada campo extraído
+        es editable). Puedes solicitar la eliminación completa de tu cuenta y tus datos — ver{' '}
+        <a href="./account-deletion">cómo eliminar tu cuenta</a>. Para cualquier otra
+        solicitud (acceso, portabilidad, limitación), escríbenos a{' '}
         <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
       </p>
 
       <h2>Menores</h2>
       <p>
-        Doku no está dirigida a menores de 13 años y no recopilamos sus datos a sabiendas.
-        Si creés que un menor nos dio sus datos, escribinos a{' '}
-        <a href={`mailto:${contactEmail}`}>{contactEmail}</a> y los eliminamos.
+        Doku no está dirigida a menores de 13 años y no recopilamos sus datos a sabiendas. Si
+        crees que un menor nos dio sus datos, escríbenos a{' '}
+        <a href={`mailto:${contactEmail}`}>{contactEmail}</a> y los eliminaremos.
       </p>
 
       <h2>Cambios a esta política</h2>
       <p>
-        Si cambiamos esta política de forma sustancial, lo vamos a comunicar en la app o por
-        email antes de que el cambio entre en vigencia.
+        Si cambiamos esta política de forma sustancial, lo anunciaremos en la app o por email
+        antes de que el cambio entre en vigor.
       </p>
     </>
   );

@@ -23,7 +23,8 @@ This site uses Doku's design system, ported from the app repo. Read the README's
   `brand-strong`. Links use the `link` token, not brand.
 - Radii: `rounded-sm|md|lg|pill` (10/16/22/999). Card elevation: `shadow-card` +
   `bg-surface` + `border-card-border`.
-- Every color/style must work in light **and** dark (`prefers-color-scheme`).
+- The site is light-only by decision: no dark tokens, no `dark:` variants.
+  `color-scheme: light` in `globals.css` keeps it light on dark systems.
 
 # Structure
 

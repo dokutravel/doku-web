@@ -27,7 +27,7 @@ export default async function SupportPage({ params }: PageProps<'/[locale]/suppo
     <LegalPage title={t.legal.supportTitle}>
       <p>
         {es
-          ? '¿Encontraste un problema, tenés una idea o algo no funciona como esperabas? Escribinos — leemos todo.'
+          ? '¿Encontraste un problema, tienes una idea o algo no funciona como esperabas? Escríbenos — leemos todo.'
           : 'Found a problem, have an idea, or something is not working as expected? Write to us — we read everything.'}
       </p>
       <p>

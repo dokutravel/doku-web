@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps<'/[locale]'>): Prom
       url: localeUrl(locale as Locale),
       siteName: 'Doku',
       type: 'website',
-      locale: locale === 'es' ? 'es_AR' : 'en_US',
+      locale: locale === 'es' ? 'es_LA' : 'en_US',
     },
     twitter: {
       card: 'summary_large_image',

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { IoTrashOutline } from 'react-icons/io5';
 
 import { LegalPage } from '@/components/legal-page';
 import { AccountDeletionEn } from '@/content/account-deletion-en';
@@ -28,7 +29,12 @@ export default async function AccountDeletionPage({
   const { locale } = await params;
   const t = getDictionary(locale as Locale);
   return (
-    <LegalPage title={t.legal.deletionTitle}>
+    <LegalPage
+      title={t.legal.deletionTitle}
+      badgeLabel={t.legal.badgeAccount}
+      badgeIcon={IoTrashOutline}
+      badgeTone="danger"
+    >
       {locale === 'es' ? <AccountDeletionEs /> : <AccountDeletionEn />}
     </LegalPage>
   );

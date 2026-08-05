@@ -49,12 +49,12 @@ export function WaitlistForm({ locale, labels }: { locale: string; labels: Waitl
           required
           placeholder={labels.placeholder}
           aria-label={labels.placeholder}
-          className="h-12 flex-1 rounded-pill border border-input-border bg-surface px-5 text-body-large text-text placeholder:text-text-secondary focus:border-brand-strong focus:outline-none"
+          className="h-13 rounded-pill border sm:flex-1 border-input-border bg-surface px-5 text-body-large text-text placeholder:text-text-secondary focus:border-brand-strong focus:outline-none"
         />
         <button
           type="submit"
           disabled={pending}
-          className="h-12 rounded-pill bg-brand px-6 text-button-large text-on-brand transition-opacity hover:opacity-90 disabled:opacity-60"
+          className="h-13 rounded-pill bg-brand px-6 text-button-large text-on-brand transition-opacity hover:opacity-90 disabled:opacity-60"
         >
           {pending ? labels.submitting : labels.submit}
         </button>

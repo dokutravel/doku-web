@@ -1,12 +1,20 @@
+import { IoSparkles } from 'react-icons/io5';
+
+import { Callout } from '@/components/callout';
 import { contactEmail } from '@/lib/site';
 
 export function PrivacyEn() {
   return (
     <>
+      <Callout tone="brand" icon={IoSparkles}>
+        <p>
+          The short version: your documents are yours, we do not sell your data, and we do
+          not use it for advertising.
+        </p>
+      </Callout>
       <p>
         Doku is an app for organizing travel documents. This policy explains what data we
-        collect, what we use it for, and the rights you have over it. The short version: your
-        documents are yours, we do not sell your data, and we do not use it for advertising.
+        collect, what we use it for, and the rights you have over it.
       </p>
 
       <h2>Who is responsible</h2>

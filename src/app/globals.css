@@ -41,6 +41,7 @@
   --activity-soft: #f3ebfa;
   --insurance: #985f0c;
   --insurance-soft: #faeeda;
+  --insurance-wash: #fdf8f0;
   --other: #5b6066;
   --other-soft: #f0f1f3;
 
@@ -52,46 +53,9 @@
   --warning-soft: #f9eedc;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #141414;
-    --surface: #202020;
-    --surface-sunken: #181818;
-    --background-element: #272727;
-    --background-selected: #2d3a18;
-    --text: #faf8f2;
-    --text-secondary: #acacac;
-    --link: #aac9e4;
-    --border: #2b2b2b;
-    --card-border: #393939;
-    --input-border: #555555;
-
-    --brand: #aed951;
-    --on-brand: #141414;
-    --brand-soft: #3b4c1e;
-    --brand-strong: #aed951;
-
-    --flight: #6fb0f2;
-    --flight-soft: #16243a;
-    --hotel: #5dcaa5;
-    --hotel-soft: #11302a;
-    --transport: #f0997b;
-    --transport-soft: #3a2114;
-    --activity: #c49bf2;
-    --activity-soft: #2b1a3a;
-    --insurance: #f0b45c;
-    --insurance-soft: #33260e;
-    --other: #9ba1a6;
-    --other-soft: #1e1f22;
-
-    --danger: #f37e6d;
-    --danger-soft: #3f1812;
-    --success: #c6e28d;
-    --success-soft: #222c11;
-    --warning: #efba6c;
-    --warning-soft: #39280e;
-  }
-}
+/* The site ships light-only: the landing design (1a) is a light composition,
+ * so the dark-scheme token override was removed on purpose. `color-scheme`
+ * below keeps native controls light on dark systems too. */
 
 @theme inline {
   --color-*: initial;
@@ -120,6 +84,7 @@
   --color-activity-soft: var(--activity-soft);
   --color-insurance: var(--insurance);
   --color-insurance-soft: var(--insurance-soft);
+  --color-insurance-wash: var(--insurance-wash);
   --color-other: var(--other);
   --color-other-soft: var(--other-soft);
   --color-danger: var(--danger);
@@ -213,15 +178,35 @@
   /* Shadow.card */
   --shadow-*: initial;
   --shadow-card: 0 6px 16px 0 rgb(11 18 32 / 0.05);
+  /* Deep drop for the hero device illustration only. */
+  --shadow-phone: 0 24px 60px 0 rgb(0 0 0 / 0.28);
+
+  --animate-doc-in: doc-in 0.5s both;
+
+  @keyframes doc-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
 
 html {
+  color-scheme: light;
   scroll-behavior: smooth;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .animate-doc-in {
+    animation: none;
   }
 }
 

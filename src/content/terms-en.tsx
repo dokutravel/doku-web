@@ -1,3 +1,6 @@
+import { IoAlertCircleOutline } from 'react-icons/io5';
+
+import { Callout } from '@/components/callout';
 import { contactEmail } from '@/lib/site';
 
 export function TermsEn() {
@@ -29,14 +32,16 @@ export function TermsEn() {
         have no rights to.
       </p>
 
-      <h2>About AI extraction</h2>
-      <p>
-        <strong>AI can make mistakes.</strong> Extracted data (dates, times, codes, terminals)
-        is an organizational aid, not an official document. Before traveling, always verify
-        critical information against the original confirmation or with the provider (airline,
-        hotel, insurer). Doku is not responsible for decisions made based on incorrectly
-        extracted data.
-      </p>
+      <Callout tone="warning" icon={IoAlertCircleOutline}>
+        <h3>About AI extraction</h3>
+        <p>
+          <strong>AI can make mistakes.</strong> Extracted data (dates, times, codes,
+          terminals) is an organizational aid, not an official document. Before traveling,
+          always verify critical information against the original confirmation or with the
+          provider (airline, hotel, insurer). Doku is not responsible for decisions made based
+          on incorrectly extracted data.
+        </p>
+      </Callout>
 
       <h2>Acceptable use</h2>
       <p>

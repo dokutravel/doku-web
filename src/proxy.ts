@@ -13,18 +13,6 @@ function isPublicPath(pathname: string): boolean {
   return PUBLIC_PATHS.some((p) => rest === p || rest.startsWith(`${p}/`));
 }
 
-/** Picks the best locale from Accept-Language. Doku only distinguishes base
- * languages (es/en), so matching prefixes is enough — no negotiation library. */
-function preferredLocale(request: NextRequest): Locale {
-  const header = request.headers.get('accept-language') ?? '';
-  for (const part of header.split(',')) {
-    const base = part.split(';')[0].trim().toLowerCase().split('-')[0];
-    const match = locales.find((l) => l === base);
-    if (match) return match;
-  }
-  return defaultLocale;
-}
-
 function pathLocale(pathname: string): Locale | null {
   return locales.find((l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`)) ?? null;
 }
@@ -55,7 +43,9 @@ function gate(request: NextRequest, locale: Locale): NextResponse | null {
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const locale = pathLocale(pathname) ?? preferredLocale(request);
+  // Unprefixed paths always resolve to English — the site defaults to EN and
+  // Spanish is an explicit choice (language switcher or /es links).
+  const locale = pathLocale(pathname) ?? defaultLocale;
 
   const gated = gate(request, locale);
   if (gated) return gated;

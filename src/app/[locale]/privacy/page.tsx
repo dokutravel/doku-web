@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { IoLockClosed } from 'react-icons/io5';
 
 import { LegalPage } from '@/components/legal-page';
 import { PrivacyEn } from '@/content/privacy-en';
@@ -28,6 +29,8 @@ export default async function PrivacyPage({ params }: PageProps<'/[locale]/priva
   return (
     <LegalPage
       title={t.legal.privacyTitle}
+      badgeLabel={t.legal.badgeLegal}
+      badgeIcon={IoLockClosed}
       updatedLabel={t.legal.lastUpdated}
       updatedDate={UPDATED[locale as Locale]}
     >
