@@ -1,9 +1,10 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useEffect } from 'react';
 
 import { idleLeadState } from '@/lib/actions/lead-state';
 import { submitAgencyLead } from '@/lib/actions/submit-agency-lead';
+import { captureEvent } from '@/lib/analytics';
 
 export type AgencyFormLabels = {
   nameLabel: string;
@@ -23,6 +24,10 @@ const inputClass =
 
 export function AgencyForm({ locale, labels }: { locale: string; labels: AgencyFormLabels }) {
   const [state, formAction, pending] = useActionState(submitAgencyLead, idleLeadState);
+
+  useEffect(() => {
+    if (state.status === 'ok') captureEvent('agency_lead_submitted', { locale });
+  }, [state.status, locale]);
 
   if (state.status === 'ok' || state.status === 'duplicate') {
     return (

@@ -1,9 +1,10 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useEffect } from 'react';
 
 import { idleLeadState } from '@/lib/actions/lead-state';
 import { submitWaitlist } from '@/lib/actions/submit-waitlist';
+import { captureEvent } from '@/lib/analytics';
 
 export type WaitlistLabels = {
   placeholder: string;
@@ -18,6 +19,10 @@ export type WaitlistLabels = {
 
 export function WaitlistForm({ locale, labels }: { locale: string; labels: WaitlistLabels }) {
   const [state, formAction, pending] = useActionState(submitWaitlist, idleLeadState);
+
+  useEffect(() => {
+    if (state.status === 'ok') captureEvent('waitlist_joined', { locale });
+  }, [state.status, locale]);
 
   if (state.status === 'ok' || state.status === 'duplicate') {
     return (
