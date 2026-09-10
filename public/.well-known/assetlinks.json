@@ -1,0 +1,22 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.dokutravel.app",
+      "sha256_cert_fingerprints": [
+        "92:0E:DE:46:EB:FD:A4:42:CB:89:42:5F:FA:2B:15:FD:38:3A:56:DF:74:9E:AE:D9:A6:35:51:18:30:82:D4:7A"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.dokutravel.app.dev",
+      "sha256_cert_fingerprints": [
+        "92:0E:DE:46:EB:FD:A4:42:CB:89:42:5F:FA:2B:15:FD:38:3A:56:DF:74:9E:AE:D9:A6:35:51:18:30:82:D4:7A"
+      ]
+    }
+  }
+]

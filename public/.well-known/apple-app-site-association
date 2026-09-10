@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["Q7ZYGDKFH6.com.dokutravel.app", "Q7ZYGDKFH6.com.dokutravel.app.dev"],
+        "components": [
+          {
+            "/": "/invite/*",
+            "comment": "Invitation links open the app straight on the accept screen."
+          }
+        ]
+      }
+    ]
+  }
+}

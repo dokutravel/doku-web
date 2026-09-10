@@ -222,7 +222,25 @@ export const es: Dictionary = {
     supportTitle: 'Soporte',
     lastUpdated: 'Última actualización',
   },
+  invite: {
+    badge: 'Invitación a un viaje',
+    title: 'Te han invitado a un viaje en Doku',
+    subtitle:
+      'Doku reúne los documentos de un viaje en un solo lugar — vuelos, hoteles, transporte y seguros — y todos los invitados ven lo mismo, también sin conexión.',
+    hasApp: '¿Ya tienes Doku instalada?',
+    openApp: 'Abrir la invitación',
+    getApp: 'Consigue Doku para aceptarla',
+    storesSoon: 'Doku está en beta privada. Déjanos tu correo y te enviamos el enlace en cuanto esté disponible.',
+    whatIsIt: 'Qué incluye',
+    point1: 'Todas las reservas del viaje en un solo lugar, ordenadas por día.',
+    point2: 'Disponibles sin conexión, para los momentos sin señal.',
+    point3: 'No tienes que pagar nada: quien te invitó ya cubrió este viaje.',
+    keepsWaiting: 'La invitación te espera. Ábrela en el teléfono donde instales Doku.',
+  },
   meta: {
+    inviteTitle: 'Te han invitado a un viaje',
+    inviteDescription:
+      'Alguien ha compartido un viaje contigo en Doku. Instala la aplicación para ver todos los documentos del viaje, también sin conexión.',
     homeTitle: 'Doku — Tus documentos de viaje, organizados con IA',
     homeDescription:
       'Comparte el PDF de tu reserva y Doku lo lee, lo clasifica y lo archiva en tu viaje. Vuelos, hoteles, transporte y seguros — disponibles sin conexión, en inglés y español.',

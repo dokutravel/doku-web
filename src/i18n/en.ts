@@ -220,7 +220,25 @@ export const en = {
     supportTitle: 'Support',
     lastUpdated: 'Last updated',
   },
+  invite: {
+    badge: 'Trip invitation',
+    title: 'You have been invited to a trip on Doku',
+    subtitle:
+      'Doku keeps a trip’s documents in one place — flights, hotels, transport and insurance — and everyone invited sees the same thing, offline included.',
+    hasApp: 'Already have Doku installed?',
+    openApp: 'Open the invitation',
+    getApp: 'Get Doku to accept it',
+    storesSoon: 'Doku is in private beta. Leave your email and we will send you the link as soon as it is available.',
+    whatIsIt: 'What you get',
+    point1: 'Every booking for the trip in one place, filed by day.',
+    point2: 'Available offline, for the moments with no connection.',
+    point3: 'Nothing to pay: the person who invited you already covered this trip.',
+    keepsWaiting: 'The invitation waits for you. Open it on the phone where you install Doku.',
+  },
   meta: {
+    inviteTitle: 'You have been invited to a trip',
+    inviteDescription:
+      'Someone shared a trip with you on Doku. Install the app to see every document for the trip, offline included.',
     homeTitle: 'Doku — Your travel documents, organized by AI',
     homeDescription:
       'Share a booking PDF and Doku reads it, classifies it and files it in your trip. Flights, hotels, transport and insurance — available offline, in English and Spanish.',

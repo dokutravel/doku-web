@@ -4,9 +4,11 @@ import { defaultLocale, locales, type Locale } from '@/i18n/config';
 
 /** Routes that stay public even in coming-soon mode: the app and the store
  * listings link to these (privacy URL is required to publish), so launching
- * the WEB must not wait for launching the PRODUCT. Future functional routes
- * (e.g. /invite/[token]) belong in this list too. */
-const PUBLIC_PATHS = ['/privacy', '/terms', '/account-deletion', '/support'];
+ * the WEB must not wait for launching the PRODUCT. `/invite` is the first
+ * functional one — an invitation is sent by a real person to a real person,
+ * and it has to land on the invitation whether or not the marketing site has
+ * opened. */
+const PUBLIC_PATHS = ['/privacy', '/terms', '/account-deletion', '/support', '/invite'];
 
 function isPublicPath(pathname: string): boolean {
   const rest = pathname.replace(/^\/(es|en)(?=\/|$)/, '');
@@ -59,5 +61,9 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   // Everything except Next internals, metadata routes and public files.
-  matcher: ['/((?!_next|api|favicon.ico|icon|apple-icon|robots.txt|sitemap.xml|opengraph-image|.*\\..*).*)'],
+  // `.well-known` is excluded BY NAME, not by the dotted-path rule below:
+  // `apple-app-site-association` has no extension, so it would fall through to
+  // the locale redirect — and Apple refuses to verify a domain whose
+  // association file answers with a redirect instead of the JSON.
+  matcher: ['/((?!_next|api|\\.well-known|favicon.ico|icon|apple-icon|robots.txt|sitemap.xml|opengraph-image|.*\\..*).*)'],
 };
