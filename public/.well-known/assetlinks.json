@@ -1,5 +1,6 @@
 [
   {
+    "_comment": "The fingerprint below is EAS's UPLOAD key: it covers builds installed directly (development, preview). Google Play re-signs the app with its own key, so before the first Play release the SHA-256 from Play Console > Setup > App integrity > App signing must be APPENDED to both arrays here, or invitation links will silently open the browser instead of Doku for everyone who installs from the store. Keep both: removing this one breaks the test builds. Tracked in doku/docs/RELEASE-PROD.md > Pending manual ops.",
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
