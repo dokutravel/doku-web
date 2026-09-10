@@ -15,6 +15,11 @@ function isPublicPath(pathname: string): boolean {
   return PUBLIC_PATHS.some((p) => rest === p || rest.startsWith(`${p}/`));
 }
 
+/** `/invite/<token>`, before a locale has been chosen for it. */
+function isInvitePath(pathname: string): boolean {
+  return pathname === '/invite' || pathname.startsWith('/invite/');
+}
+
 function pathLocale(pathname: string): Locale | null {
   return locales.find((l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`)) ?? null;
 }
@@ -56,6 +61,14 @@ export function proxy(request: NextRequest) {
 
   const url = request.nextUrl.clone();
   url.pathname = `/${locale}${pathname === '/' ? '' : pathname}`;
+
+  // An invitation link is REWRITTEN, not redirected: it keeps the URL the app
+  // put in the message. Both platforms verify a link against the URL they were
+  // handed and neither follows a redirect to do it, so a redirect here would
+  // mean iOS and Android had to claim the localized paths as well — and the
+  // person would watch the browser bounce once before the app opened.
+  if (isInvitePath(pathname)) return NextResponse.rewrite(url);
+
   return NextResponse.redirect(url);
 }
 

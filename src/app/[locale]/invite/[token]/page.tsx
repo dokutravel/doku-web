@@ -66,7 +66,7 @@ export default async function InvitePage({ params }: PageProps<'/[locale]/invite
           ))}
         </ul>
 
-        <div className="mt-12 rounded-lg border border-card-border bg-surface p-6">
+        <div className="mt-12 rounded-lg border border-card-border bg-surface p-6 shadow-card">
           <p className="text-title-medium text-text">{t.invite.getApp}</p>
           <p className="mt-2 text-body-medium text-text-secondary">{t.invite.storesSoon}</p>
           <div className="mt-6">
