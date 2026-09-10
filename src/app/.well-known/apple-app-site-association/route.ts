@@ -1,29 +1,28 @@
+import { headers } from 'next/headers';
+
+import { appIdsForHost } from '@/lib/site-app-ids';
+
 /**
- * The Apple App Site Association file, per environment.
+ * The Apple App Site Association file, per domain.
  *
- * Served from a route rather than `public/` because its contents differ by
- * deployment and the file itself is shared by every branch. Production must
- * vouch for the production app alone: if dev.dokutravel.com also listed
- * `com.dokutravel.app`, a dev invitation would open the production app on a
- * phone that has both installed — the exact confusion the two variants exist
- * to avoid.
+ * Served from a route rather than `public/` because its contents depend on
+ * which site is being asked: production vouches for the production app alone,
+ * and dev.dokutravel.com for the dev one. A single static file would have had
+ * the dev site claiming `com.dokutravel.app`, so on a phone with both
+ * installed a dev invitation could open the production app.
  *
  * `applinks` only, and only `/invite/*`: nothing else on the site is meant to
  * leave the browser.
  */
-const IS_PRODUCTION = process.env.VERCEL_ENV === 'production';
+export async function GET() {
+  const { appleAppId } = appIdsForHost((await headers()).get('host'));
 
-const APP_ID = IS_PRODUCTION
-  ? 'Q7ZYGDKFH6.com.dokutravel.app'
-  : 'Q7ZYGDKFH6.com.dokutravel.app.dev';
-
-export function GET() {
   return Response.json(
     {
       applinks: {
         details: [
           {
-            appIDs: [APP_ID],
+            appIDs: [appleAppId],
             components: [
               {
                 '/': '/invite/*',
