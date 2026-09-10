@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 
 import { Container } from '@/components/container';
+import { InviteCodeCard } from '@/components/invite-code-card';
 import { Logo } from '@/components/logo';
 import { OpenInAppButton } from '@/components/open-in-app-button';
 import { WaitlistForm } from '@/components/waitlist-form';
 import type { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
+import { parseInviteCode } from '@/lib/invite-code';
 
 /**
  * Where an invitation link lands when the app did NOT open it.
@@ -42,6 +44,10 @@ export async function generateMetadata({
 export default async function InvitePage({ params }: PageProps<'/[locale]/invite/[token]'>) {
   const { locale, token } = await params;
   const t = getDictionary(locale as Locale);
+  // Anything can be typed into a public path, so the code is shown only when
+  // the URL actually holds one. A malformed segment styled as a code would
+  // invite someone to type nonsense into the app.
+  const code = parseInviteCode(token);
 
   return (
     <Container className="py-16 sm:py-24">
@@ -65,6 +71,35 @@ export default async function InvitePage({ params }: PageProps<'/[locale]/invite
             </li>
           ))}
         </ul>
+
+        {code ? (
+          <div className="mt-12 text-left">
+            <InviteCodeCard
+              code={code}
+              labels={{
+                heading: t.invite.codeHeading,
+                hint: t.invite.codeHint,
+                copy: t.invite.codeCopy,
+                copied: t.invite.codeCopied,
+              }}
+            />
+
+            <p className="mt-10 text-title-medium text-text">{t.invite.stepsHeading}</p>
+            <ol className="mt-4 space-y-3">
+              {[t.invite.step1, t.invite.step2, t.invite.step3].map((step, i) => (
+                <li key={step} className="flex gap-3 text-body-medium text-text">
+                  <span
+                    aria-hidden
+                    className="flex h-6 w-6 shrink-0 items-center justify-center rounded-pill bg-brand-soft text-label-medium text-brand-strong"
+                  >
+                    {i + 1}
+                  </span>
+                  {step}
+                </li>
+              ))}
+            </ol>
+          </div>
+        ) : null}
 
         <div className="mt-12 rounded-lg border border-card-border bg-surface p-6 shadow-card">
           <p className="text-title-medium text-text">{t.invite.getApp}</p>
