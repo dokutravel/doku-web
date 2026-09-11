@@ -9,19 +9,36 @@ import { appIdsForHost } from '@/lib/site-app-ids';
  * app, so a dev invitation cannot open the production app on a phone carrying
  * both.
  *
- * The fingerprint below is EAS's UPLOAD key, which covers builds installed
- * directly (development, preview). Google Play DISCARDS that signature and
- * re-signs with a key that does not exist until the first upload, so before
- * the first Play release its SHA-256 (Play Console → Setup → App integrity →
- * App signing) has to be added to `PRODUCTION_FINGERPRINTS` — both must stay,
- * or the directly installed builds stop verifying. Until then, links open the
- * browser for anyone who installed from the store, silently and only for them.
- * Tracked in doku/docs/RELEASE-PROD.md → Pending manual ops.
+ * A fingerprint here has to match the signature of the installed APK exactly,
+ * so the production entry carries both keys that can produce one: Play's, for
+ * anyone who installed from the store, and EAS's upload key, for a build
+ * installed directly. Dropping either one breaks that half silently — the
+ * link just opens the browser, and only for the people it affects.
+ */
+/**
+ * The keystore EAS signs every build with — `eas credentials --platform
+ * android` → Configuration: Build Credentials → SHA256 Fingerprint. This is
+ * what a directly installed build (development, preview, an APK sent by hand)
+ * carries, and for Play it is only the UPLOAD signature, which Play discards.
  */
 const EAS_UPLOAD_KEY =
-  '92:0E:DE:46:EB:FD:A4:42:CB:89:42:5F:FA:2B:15:FD:38:3A:56:DF:74:9E:AE:D9:A6:35:51:18:30:82:D4:7A';
+  'C5:94:42:CF:2C:B5:04:A5:08:EF:03:EE:BA:C0:49:D1:D5:37:9C:5F:B8:8C:DD:78:86:62:76:4B:BF:3E:94:2D';
 
-const PRODUCTION_FINGERPRINTS = [EAS_UPLOAD_KEY];
+/**
+ * The key Play re-signs the production app with, from Play Console → Setup →
+ * App integrity → App signing → *App signing key certificate*. It does not
+ * exist until the first upload, which is why it could only be filled in after
+ * 1.2.0 (29) reached the alpha track.
+ *
+ * Both must stay on the production entry: this one covers installs from Play,
+ * the upload key covers builds installed directly.
+ */
+const PLAY_APP_SIGNING_KEY =
+  'D7:76:D9:6A:C5:39:38:BD:FE:F0:35:9D:10:51:C2:EE:A6:11:8F:36:90:14:BA:B6:A8:CE:5A:9A:8E:EE:AC:E4';
+
+const PRODUCTION_FINGERPRINTS = [PLAY_APP_SIGNING_KEY, EAS_UPLOAD_KEY];
+// `com.dokutravel.app.dev` never goes through Play, so it is signed by the
+// upload key and nothing else.
 const DEV_FINGERPRINTS = [EAS_UPLOAD_KEY];
 
 export async function GET() {
