@@ -14,16 +14,18 @@
  */
 const PRODUCTION_HOST = 'dokutravel.com';
 
-export type AppVariantIds = { appleAppId: string; androidPackage: string };
+export type AppVariantIds = { appleAppId: string; androidPackage: string; scheme: string };
 
 const PRODUCTION_IDS: AppVariantIds = {
   appleAppId: 'Q7ZYGDKFH6.com.dokutravel.app',
   androidPackage: 'com.dokutravel.app',
+  scheme: 'doku',
 };
 
 const DEV_IDS: AppVariantIds = {
   appleAppId: 'Q7ZYGDKFH6.com.dokutravel.app.dev',
   androidPackage: 'com.dokutravel.app.dev',
+  scheme: 'doku-dev',
 };
 
 /** The production site is the apex domain and its `www` alias, nothing else —

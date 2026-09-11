@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 
 import { Container } from '@/components/container';
 import { InviteCodeCard } from '@/components/invite-code-card';
@@ -8,6 +9,7 @@ import { WaitlistForm } from '@/components/waitlist-form';
 import type { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { parseInviteCode } from '@/lib/invite-code';
+import { appIdsForHost } from '@/lib/site-app-ids';
 
 /**
  * Where an invitation link lands when the app did NOT open it.
@@ -43,6 +45,7 @@ export async function generateMetadata({
 
 export default async function InvitePage({ params }: PageProps<'/[locale]/invite/[token]'>) {
   const { locale, token } = await params;
+  const { scheme } = appIdsForHost((await headers()).get('host'));
   const t = getDictionary(locale as Locale);
   // Anything can be typed into a public path, so the code is shown only when
   // the URL actually holds one. A malformed segment styled as a code would
@@ -125,7 +128,7 @@ export default async function InvitePage({ params }: PageProps<'/[locale]/invite
         <div className="mt-10">
           <p className="text-body-medium text-text-secondary">{t.invite.hasApp}</p>
           <div className="mt-3">
-            <OpenInAppButton token={token} label={t.invite.openApp} />
+            <OpenInAppButton token={token} label={t.invite.openApp} scheme={scheme} />
           </div>
         </div>
       </div>

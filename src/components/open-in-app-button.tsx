@@ -15,8 +15,20 @@ import { useState } from 'react';
  * The custom scheme is the fallback precisely because it cannot fail loudly:
  * a device without Doku does nothing visible, so the page stays as it was and
  * the store buttons are still there.
+ *
+ * The scheme comes from the host, like every other app identity on this site:
+ * a hardcoded `doku://` made the dev site open the production app on a phone
+ * carrying both, handing a dev invitation to the wrong backend.
  */
-export function OpenInAppButton({ token, label }: { token: string; label: string }) {
+export function OpenInAppButton({
+  token,
+  label,
+  scheme,
+}: {
+  token: string;
+  label: string;
+  scheme: string;
+}) {
   const [tried, setTried] = useState(false);
 
   return (
@@ -24,7 +36,7 @@ export function OpenInAppButton({ token, label }: { token: string; label: string
       type="button"
       onClick={() => {
         setTried(true);
-        window.location.href = `doku://invite/${encodeURIComponent(token)}`;
+        window.location.href = `${scheme}://invite/${encodeURIComponent(token)}`;
       }}
       className="inline-flex items-center justify-center rounded-pill border border-card-border bg-surface px-6 py-3 text-button-large text-text transition-opacity hover:bg-background-element active:opacity-80"
       aria-live="polite"
