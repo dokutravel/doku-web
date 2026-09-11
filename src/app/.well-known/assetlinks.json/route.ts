@@ -36,10 +36,18 @@ const EAS_UPLOAD_KEY =
 const PLAY_APP_SIGNING_KEY =
   'D7:76:D9:6A:C5:39:38:BD:FE:F0:35:9D:10:51:C2:EE:A6:11:8F:36:90:14:BA:B6:A8:CE:5A:9A:8E:EE:AC:E4';
 
+/**
+ * The same thing for the dev app, which has its own Play entry: we install it
+ * from an internal testing track, so those builds carry Play's signature and
+ * not the upload key either.
+ */
+const PLAY_APP_SIGNING_KEY_DEV =
+  'BA:3F:FF:91:AA:3B:0F:13:C8:71:61:DB:60:F6:89:A9:9D:A2:5A:6C:43:38:AB:F7:77:E0:A6:59:35:41:C2:2C';
+
+// Both variants reach a phone two ways — from a Play track, or installed
+// directly from EAS — and the two routes carry different signatures.
 const PRODUCTION_FINGERPRINTS = [PLAY_APP_SIGNING_KEY, EAS_UPLOAD_KEY];
-// `com.dokutravel.app.dev` never goes through Play, so it is signed by the
-// upload key and nothing else.
-const DEV_FINGERPRINTS = [EAS_UPLOAD_KEY];
+const DEV_FINGERPRINTS = [PLAY_APP_SIGNING_KEY_DEV, EAS_UPLOAD_KEY];
 
 export async function GET() {
   const { androidPackage } = appIdsForHost((await headers()).get('host'));
