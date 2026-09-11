@@ -35,10 +35,28 @@ export function PrivacyEn() {
           extracts from them (dates, booking codes, times, passengers, destinations).
         </li>
         <li>
-          <strong>Technical data.</strong> Error and crash reports (via Sentry), AI-analysis
-          usage counters — used to enforce plan limits — and product-usage metrics (via
-          PostHog): which screens and features are used, tied to a random internal
-          identifier, never to your name, your email or the content of your documents.
+          <strong>Shared trips and invitations.</strong> When you invite someone to a trip, we
+          store the invitation: the trip, who invited them, the role granted, the expiry date
+          and, if you invited by email, the invited person&apos;s email address. Once accepted,
+          we store who is a member of each trip and with what role.
+        </li>
+        <li>
+          <strong>Purchases.</strong> If you buy a Trip Pass or the annual subscription, we
+          store what you bought, when, which trip the pass was applied to, and the store
+          transaction identifier. Purchases are processed in the App Store or Google Play
+          through RevenueCat: <strong>we neither receive nor store payment details</strong>
+          {' '}(card, billing address).
+        </li>
+        <li>
+          <strong>Notifications.</strong> If you turn on notifications, we store your
+          device&apos;s push token and its platform (iOS or Android) so we can send them.
+        </li>
+        <li>
+          <strong>Technical data.</strong> Error and crash reports (via Sentry), per-trip
+          AI-analysis usage counters — used to enforce the fair use limit — and product-usage
+          metrics (via PostHog): which screens and features are used, tied to a random
+          internal identifier, never to your name, your email or the content of your
+          documents.
         </li>
         <li>
           <strong>On this website.</strong> If you join the waitlist we store your email for
@@ -51,6 +69,8 @@ export function PrivacyEn() {
         <li>Providing the service: storing your documents, organizing them by trip and syncing them across your devices.</li>
         <li>Analyzing the documents you choose to analyze with AI, to extract their data.</li>
         <li>Sharing a trip with the people you invite — they only see that trip&apos;s documents.</li>
+        <li>Notifying you about activity in a shared trip and about your plan, if you turned notifications on.</li>
+        <li>Recording your purchases and enabling in the app what you paid for.</li>
         <li>Keeping the app stable and diagnosing errors.</li>
       </ul>
       <p>We do not sell your data or use it for advertising. Full stop.</p>
@@ -59,7 +79,8 @@ export function PrivacyEn() {
       <ul>
         <li>
           <strong>Performance of a contract:</strong> storing, organizing, analyzing and
-          syncing your documents is the service you ask for by using Doku.
+          syncing your documents, sharing a trip and recording your purchases is the service
+          you ask for by using Doku.
         </li>
         <li>
           <strong>Legitimate interest:</strong> keeping the app stable (error reports) and
@@ -67,8 +88,12 @@ export function PrivacyEn() {
           personal data beyond an internal identifier).
         </li>
         <li>
-          <strong>Consent:</strong> joining the waitlist on this website and any
-          communication you opt into. You can withdraw it at any time.
+          <strong>Consent:</strong> push notifications, joining the waitlist on this website
+          and any communication you opt into. You can withdraw it at any time.
+        </li>
+        <li>
+          <strong>Legal obligation:</strong> keeping the record of purchases for as long as
+          applicable tax and accounting rules require.
         </li>
       </ul>
 
@@ -101,6 +126,18 @@ export function PrivacyEn() {
           analyze.
         </li>
         <li>
+          <strong>RevenueCat</strong> — purchase and subscription management. It receives an
+          identifier for your account and the state of your purchases, never your documents.
+        </li>
+        <li>
+          <strong>Apple and Google</strong> — payment processing in the App Store and Google
+          Play, as independent controllers under their own policies.
+        </li>
+        <li>
+          <strong>Expo</strong> — delivery of push notifications to your device. The text of a
+          notification may include the trip name and the name of the person who acted.
+        </li>
+        <li>
           <strong>Sentry</strong> — app error and crash reports.
         </li>
         <li>
@@ -122,14 +159,17 @@ export function PrivacyEn() {
       <h2>How long we keep it</h2>
       <p>
         For as long as your account exists. If you delete a document, it is removed from our
-        storage. If you delete your account, your account, documents, trips and extracted data
-        are deleted within 30 days.
+        storage. If you delete your account, your account, documents, trips, invitations,
+        notification tokens and extracted data are deleted within 30 days. The record of
+        purchases (which product, when, and the transaction identifier) is kept unlinked from
+        your account for as long as tax and accounting rules require.
       </p>
 
       <h2>Your rights</h2>
       <p>
         You can access your data and correct it directly in the app (every extracted field is
-        editable). You can request full deletion of your account and data — see{' '}
+        editable). You can turn notifications off at any time from your device or app
+        settings. You can request full deletion of your account and data — see{' '}
         <a href="./account-deletion">how to delete your account</a>. For any other request
         (access, portability, restriction), write to{' '}
         <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.

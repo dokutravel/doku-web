@@ -18,7 +18,7 @@ export const en = {
     chips: {
       platforms: 'iOS & Android',
       offline: 'Works offline',
-      free: 'Free during beta',
+      free: 'Your first trip is free',
     },
   },
   waitlist: {
@@ -123,7 +123,7 @@ export const en = {
       },
       {
         q: 'How much does it cost?',
-        a: 'During the beta, Doku is free. At launch there will be a free plan and a premium plan with unlimited AI analysis, offline travel mode and shared trips.',
+        a: 'Your first trip is free: every account starts with a Trip Pass that applies itself. After that, a Trip Pass costs US$4.99 and covers one trip for good, or the annual subscription costs US$29.99 and covers every trip you take. Both enable AI analysis, offline mode and shared trips.',
       },
       {
         q: 'iPhone or Android?',

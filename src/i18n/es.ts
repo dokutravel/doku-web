@@ -20,7 +20,7 @@ export const es: Dictionary = {
     chips: {
       platforms: 'iOS y Android',
       offline: 'Funciona sin conexión',
-      free: 'Gratis durante la beta',
+      free: 'Tu primer viaje, gratis',
     },
   },
   waitlist: {
@@ -125,7 +125,7 @@ export const es: Dictionary = {
       },
       {
         q: '¿Cuánto cuesta?',
-        a: 'Durante la beta, Doku es gratis. Al lanzar habrá un plan gratuito y un plan premium con análisis de IA ilimitado, modo viaje sin conexión y viajes compartidos.',
+        a: 'Tu primer viaje es gratis: cada cuenta nace con un Trip Pass que se aplica solo. Después, un Trip Pass cuesta US$ 4,99 y habilita un viaje para siempre, o la suscripción anual cuesta US$ 29,99 e incluye todos tus viajes. Ambos habilitan el análisis con IA, el modo sin conexión y los viajes compartidos.',
       },
       {
         q: '¿iPhone o Android?',
