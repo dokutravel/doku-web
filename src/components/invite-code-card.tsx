@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 
-import { formatInviteCode } from '@/lib/invite-code';
 
 /**
  * The code, shown large and copyable.
@@ -49,7 +48,7 @@ export function InviteCodeCard({
       <p className="mt-2 text-body-medium text-text-secondary">{labels.hint}</p>
 
       <p className="mt-6 font-mono text-headline-medium tracking-[0.2em] text-text">
-        {formatInviteCode(code)}
+        {code}
       </p>
 
       <button

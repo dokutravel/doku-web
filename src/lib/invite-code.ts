@@ -28,8 +28,6 @@ export function parseInviteCode(segment: string): string | null {
   return upper;
 }
 
-/** Groups the code the way the app shows it: `K7M4-P2QX`. */
-export function formatInviteCode(code: string): string {
-  const half = CODE_LENGTH / 2;
-  return `${code.slice(0, half)}-${code.slice(half)}`;
-}
+// The code is shown exactly as it is stored, matching the app. A grouping
+// hyphen read better aloud, but it is a character that is not in the code —
+// people typed it back in, or wondered whether it belonged.
