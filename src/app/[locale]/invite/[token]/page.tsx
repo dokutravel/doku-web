@@ -64,7 +64,15 @@ export default async function InvitePage({ params }: PageProps<'/[locale]/invite
         <h1 className="mt-4 text-headline-large text-text">{t.invite.title}</h1>
         <p className="mt-4 text-body-large text-text-secondary">{t.invite.subtitle}</p>
 
-        <ul className="mt-10 space-y-3 text-left">
+        {/* First, and as the primary action: someone who already has Doku is
+            one tap from the trip, and burying that under a waitlist form asks
+            them to read past everything that does not apply to them. */}
+        <div className="mt-10">
+          <OpenInAppButton token={token} label={t.invite.openApp} scheme={scheme} />
+          <p className="mt-3 text-body-small text-text-secondary">{t.invite.hasApp}</p>
+        </div>
+
+        <ul className="mt-12 space-y-3 text-left">
           {[t.invite.point1, t.invite.point2, t.invite.point3].map((point) => (
             <li key={point} className="flex gap-3 text-body-medium text-text">
               <span aria-hidden className="text-brand-strong">
@@ -125,12 +133,6 @@ export default async function InvitePage({ params }: PageProps<'/[locale]/invite
           <p className="mt-4 text-body-small text-text-secondary">{t.invite.keepsWaiting}</p>
         </div>
 
-        <div className="mt-10">
-          <p className="text-body-medium text-text-secondary">{t.invite.hasApp}</p>
-          <div className="mt-3">
-            <OpenInAppButton token={token} label={t.invite.openApp} scheme={scheme} />
-          </div>
-        </div>
       </div>
     </Container>
   );

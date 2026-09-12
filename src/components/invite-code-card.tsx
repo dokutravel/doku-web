@@ -47,22 +47,21 @@ export function InviteCodeCard({
       <p className="text-title-medium text-text">{labels.heading}</p>
       <p className="mt-2 text-body-medium text-text-secondary">{labels.hint}</p>
 
-      <p className="mt-6 font-mono text-headline-medium tracking-[0.2em] text-text">
-        {code}
-      </p>
-
+      {/* The code IS the button. Shown as plain text beside a separate action,
+          it read as a label to retype by hand — people copied it character by
+          character and brought the grouping hyphen along. Tapping the thing
+          you want is the obvious gesture, so it is the one that works. */}
       <button
         type="button"
         onClick={copy}
-        className="mt-6 inline-flex items-center justify-center rounded-pill bg-brand px-6 py-3 text-button-large text-on-brand transition-opacity hover:opacity-90 active:opacity-80"
+        aria-label={`${labels.copy}: ${code}`}
+        className="mt-6 flex w-full items-center justify-between gap-4 rounded-md border border-dashed border-brand-strong bg-brand-soft px-5 py-4 text-left transition-opacity hover:opacity-90 active:opacity-80"
       >
-        {copied ? labels.copied : labels.copy}
+        <span className="font-mono text-headline-medium tracking-[0.2em] text-text">{code}</span>
+        <span className="shrink-0 text-label-medium text-brand-strong">
+          {copied ? labels.copied : labels.copy}
+        </span>
       </button>
-      {/* Announced separately so the confirmation reaches a screen reader
-          without the button's own label changing under the focus. */}
-      <span aria-live="polite" className="sr-only">
-        {copied ? labels.copied : ''}
-      </span>
     </div>
   );
 }

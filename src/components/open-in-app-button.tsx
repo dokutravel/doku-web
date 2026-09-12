@@ -38,7 +38,7 @@ export function OpenInAppButton({
         setTried(true);
         window.location.href = `${scheme}://invite/${encodeURIComponent(token)}`;
       }}
-      className="inline-flex items-center justify-center rounded-pill border border-card-border bg-surface px-6 py-3 text-button-large text-text transition-opacity hover:bg-background-element active:opacity-80"
+      className="inline-flex w-full items-center justify-center rounded-pill bg-brand px-8 py-4 text-button-large text-on-brand transition-opacity hover:opacity-90 active:opacity-80 sm:w-auto"
       aria-live="polite"
     >
       {label}
