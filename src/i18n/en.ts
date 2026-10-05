@@ -9,6 +9,8 @@ export const en = {
     faq: 'FAQ',
     agencies: 'For agencies',
     joinWaitlist: 'Join the waitlist',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
   },
   hero: {
     title: 'Land with every document already in hand.',

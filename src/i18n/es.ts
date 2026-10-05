@@ -11,6 +11,8 @@ export const es: Dictionary = {
     faq: 'FAQ',
     agencies: 'Para agencias',
     joinWaitlist: 'Únete a la lista',
+    openMenu: 'Abrir menú',
+    closeMenu: 'Cerrar menú',
   },
   hero: {
     title: 'Aterriza con todos tus documentos a mano.',
