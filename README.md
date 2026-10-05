@@ -46,6 +46,10 @@ Manrope with size-based (not weight-based) hierarchy.
   (pair with `on-brand`); green text/icons use `brand-strong`; `link` is separate
   from brand; only Manrope 400 and 600 exist; every color works in light and dark
   (`prefers-color-scheme`).
+- **Buttons** port the app's `Button` (`doku/src/shared/ui/kit.tsx`): same
+  variants, 52px min height, `Radius.md`, 0.65 pressed opacity. Their classes live
+  in `src/components/button-styles.ts`, used by `Button` and `ButtonLink` — never
+  style a button inline. The hover is the only web-only addition.
 - The brand icon is the app's `assets/images/doku-brand/icon.png`, copied — never
   redrawn.
 

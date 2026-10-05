@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import { Button } from '@/components/button';
+
 /**
  * Tries to hand the invitation to an installed Doku.
  *
@@ -32,17 +34,16 @@ export function OpenInAppButton({
   const [tried, setTried] = useState(false);
 
   return (
-    <button
-      type="button"
+    <Button
       onClick={() => {
         setTried(true);
         window.location.href = `${scheme}://invite/${encodeURIComponent(token)}`;
       }}
-      className="inline-flex w-full items-center justify-center rounded-pill bg-brand px-8 py-4 text-button-large text-on-brand transition-opacity hover:opacity-90 active:opacity-80 sm:w-auto"
+      className="w-full sm:w-auto"
       aria-live="polite"
     >
       {label}
       {tried ? <span className="sr-only"> — opening Doku</span> : null}
-    </button>
+    </Button>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useActionState, useEffect } from 'react';
 
+import { Button } from '@/components/button';
 import { idleLeadState } from '@/lib/actions/lead-state';
 import { submitAgencyLead } from '@/lib/actions/submit-agency-lead';
 import { captureEvent } from '@/lib/analytics';
@@ -57,13 +58,9 @@ export function AgencyForm({ locale, labels }: { locale: string; labels: AgencyF
       </div>
       <input type="email" name="email" required placeholder={labels.emailLabel} aria-label={labels.emailLabel} className={inputClass} />
       <textarea name="message" rows={4} placeholder={labels.messageLabel} aria-label={labels.messageLabel} className={inputClass} />
-      <button
-        type="submit"
-        disabled={pending}
-        className="h-12 self-start rounded-pill bg-brand px-6 text-button-large text-on-brand transition-opacity hover:opacity-90 disabled:opacity-60"
-      >
+      <Button type="submit" disabled={pending} className="self-start">
         {pending ? labels.submitting : labels.submit}
-      </button>
+      </Button>
       {state.status === 'invalid' && (
         <p role="alert" className="text-body-medium text-danger">
           {labels.invalidEmail}
