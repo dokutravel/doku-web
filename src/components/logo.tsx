@@ -1,12 +1,19 @@
 import Image from 'next/image';
 
-/** The Doku mark + wordmark. The icon PNG comes from the app repo
- * (assets/images/doku-brand/icon.png) — same asset, never redrawn. */
-export function Logo({ size = 28 }: { size?: number }) {
+// Intrinsic size of public/brand/doku-logo.svg (its viewBox).
+const LOGO_WIDTH = 175;
+const LOGO_HEIGHT = 92;
+
+/** The full Doku logo — mark and wordmark as one asset, so their proportions
+ * never drift. `height` sets the rendered height; width follows the aspect ratio. */
+export function Logo({ height = 40 }: { height?: number }) {
   return (
-    <span className="inline-flex items-center gap-2">
-      <Image src="/brand/doku-icon.png" alt="" width={size} height={size} priority />
-      <span className="text-title-large text-text">doku</span>
-    </span>
+    <Image
+      src="/brand/doku-logo.svg"
+      alt="Doku"
+      width={Math.round((height * LOGO_WIDTH) / LOGO_HEIGHT)}
+      height={height}
+      priority
+    />
   );
 }

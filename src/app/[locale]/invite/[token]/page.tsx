@@ -55,7 +55,7 @@ export default async function InvitePage({ params }: PageProps<'/[locale]/invite
   return (
     <Container className="py-16 sm:py-24">
       <div className="mx-auto max-w-xl text-center">
-        <Logo size={36} />
+        <Logo height={36} />
 
         <p className="mt-8 inline-flex items-center rounded-pill bg-brand-soft px-3 py-1 text-label-medium text-brand-strong">
           {t.invite.badge}
