@@ -13,9 +13,9 @@ export const en = {
     closeMenu: 'Close menu',
   },
   hero: {
-    title: 'Land with every document already in hand.',
+    title: 'Land with all your bookings right at your fingertips.',
     subtitle:
-      'Forward any booking to Doku — a flight, a hotel, an insurance policy. The AI reads it, files it in the right trip, and keeps it ready offline.',
+      'Stop digging through screenshots or emails. Doku organizes your documents into a travel itinerary, ready to use offline.',
     badge: 'Private beta — join early',
     chips: {
       platforms: 'iOS & Android',

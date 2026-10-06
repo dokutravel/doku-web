@@ -15,9 +15,9 @@ export const es: Dictionary = {
     closeMenu: 'Cerrar menú',
   },
   hero: {
-    title: 'Aterriza con todos tus documentos a mano.',
+    title: 'Aterriza con todas tus reservas a mano.',
     subtitle:
-      'Reenvía cualquier reserva a Doku — un vuelo, un hotel, un seguro. La IA la lee, la archiva en el viaje correcto y la mantiene lista sin conexión.',
+      'Basta de buscar entre capturas de pantalla o mails. Doku organiza tus documentos en un itinerario de viaje, listos para usar offline.',
     badge: 'Beta privada — únete antes',
     chips: {
       platforms: 'iOS y Android',
