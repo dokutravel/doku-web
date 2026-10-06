@@ -1,7 +1,7 @@
 export const en = {
   common: {
     appName: 'Doku',
-    tagline: 'Your travel documents, organized by AI',
+    tagline: 'Your travel documents, organized',
   },
   nav: {
     how: 'How it works',
@@ -39,18 +39,18 @@ export const en = {
     title: 'Three steps. Zero folders.',
     steps: [
       {
-        title: 'Share the booking',
-        body: 'Tap share in your email or WhatsApp and pick Doku. PDFs, screenshots or photos — up to five at once.',
+        title: 'Share your bookings',
+        body: 'Tap "Share" directly from your email, WhatsApp, or photo gallery and select Doku. Works with PDFs, screenshots, or booking confirmations—no need to open the app.',
         chip: 'From anywhere',
       },
       {
-        title: 'AI does the filing',
-        body: 'Doku recognizes flights, hotels, transport, activities and insurance, and extracts dates, codes, times and passengers.',
+        title: 'Doku organizes everything for you',
+        body: 'Doku recognizes flights, hotels, transport, activities, and insurance. It organizes them by itinerary, summarizes the key details, and keeps your voucher ready for whenever you need to show your booking.',
         chip: 'Reads any format',
       },
       {
-        title: 'Your trip is ready',
-        body: 'Every document lands in the right trip — sorted, offline-ready. You just travel.',
+        title: 'Your trip, ready to go',
+        body: 'Each document is assigned to the right trip—organized and available 100% offline. Show your bookings at immigration, airports, or hotel check-ins without searching through emails or WhatsApp chats. All you have to do is enjoy the journey.',
         chip: 'Works offline',
       },
     ],
@@ -83,7 +83,7 @@ export const en = {
       {
         key: 'edit',
         title: 'You have the final say',
-        body: 'Fix any field the AI got wrong, or add documents entirely by hand. AI is optional, always.',
+        body: 'Fix any field Doku got wrong, or add documents entirely by hand. You can change whatever you need.',
       },
       {
         key: 'privacy',
@@ -105,7 +105,7 @@ export const en = {
     items: [
       {
         q: 'What is Doku?',
-        a: 'Doku is a mobile app that organizes your travel documents. You share it your booking confirmations — flights, hotels, transport, activities, insurance — and AI extracts the key details and groups everything by trip.',
+        a: 'Doku is a mobile app that organizes your travel documents. You share it your booking confirmations — flights, hotels, transport, activities, insurance — and it extracts the key details and groups everything by trip.',
       },
       {
         q: 'How does Doku organize my bookings?',
@@ -124,8 +124,15 @@ export const en = {
         a: 'Your documents are stored encrypted and are only visible to your account and to people you explicitly share a trip with. See our privacy policy for the full picture.',
       },
       {
-        q: 'How much does it cost?',
-        a: 'Your first trip is free: every account starts with a Trip Pass that applies itself. After that, a Trip Pass costs US$4.99 and covers one trip for good, or the annual subscription costs US$29.99 and covers every trip you take. Both enable AI analysis, offline mode and shared trips.',
+        q: 'How much does Doku cost?',
+        a: [
+          'Your first trip is 100% free: every new account automatically includes a free Trip Pass.',
+          "A Trip Pass unlocks Doku's full potential: automatic voucher and document organization, seamless sharing with travel companions, and full offline access.",
+          "Once you've used your free pass, you can choose the option that best fits your travel style:",
+          '- Single Trip Pass (US$ 4.99): unlocks one specific trip forever.',
+          '- Frequent Traveler - Annual Subscription (US$ 29.99): unlimited Trip Passes all year round.',
+          "Want to use Doku for free forever? You can! The free version allows you to keep all your travel documents organized in one place. The only difference is that you'll enter your booking details manually instead of automatically.",
+        ].join('\n'),
       },
       {
         q: 'iPhone or Android?',
@@ -207,7 +214,7 @@ export const en = {
   },
   comingSoon: {
     title: 'Something good is being built here.',
-    body: 'Doku will organize your travel documents with AI — share a booking and your trip builds itself. We are putting on the finishing touches.',
+    body: 'Doku will organize your travel documents and bookings — share a booking and your trip builds itself. All your booking confirmations, in one place. We are putting on the finishing touches.',
   },
   legal: {
     badgeLegal: 'Legal',
@@ -245,7 +252,8 @@ export const en = {
     inviteTitle: 'You have been invited to a trip',
     inviteDescription:
       'Someone shared a trip with you on Doku. Install the app to see every document for the trip, offline included.',
-    homeTitle: 'Doku — Your travel documents, organized by AI',
+    homeTitle: 'Doku — Your travel documents, organized into an itinerary',
+    ogImageAlt: 'Doku — All your bookings organized.',
     homeDescription:
       'Share a booking PDF and Doku reads it, classifies it and files it in your trip. Flights, hotels, transport and insurance — available offline, in English and Spanish.',
     privacyDescription: 'How Doku collects, uses and protects your data.',

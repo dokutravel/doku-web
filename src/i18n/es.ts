@@ -3,7 +3,7 @@ import type { Dictionary } from './en';
 export const es: Dictionary = {
   common: {
     appName: 'Doku',
-    tagline: 'Tus documentos de viaje, organizados con IA',
+    tagline: 'Tus documentos de viaje, organizados',
   },
   nav: {
     how: 'Cómo funciona',
@@ -41,18 +41,18 @@ export const es: Dictionary = {
     title: 'Tres pasos. Cero carpetas.',
     steps: [
       {
-        title: 'Comparte la reserva',
-        body: 'Toca compartir en tu email o WhatsApp y elige Doku. PDFs, capturas o fotos — hasta cinco a la vez.',
+        title: 'Comparte tus reservas',
+        body: 'Toca "Compartir" directamente desde tu email, WhatsApp o galería y selecciona Doku. Funciona con PDFs, capturas de pantalla o confirmaciones de reserva, sin necesidad de abrir la app.',
         chip: 'Desde cualquier lugar',
       },
       {
-        title: 'La IA archiva por ti',
-        body: 'Doku reconoce vuelos, hoteles, transporte, actividades y seguros, y extrae fechas, códigos, horarios y pasajeros.',
+        title: 'Doku organiza todo por ti',
+        body: 'Doku reconoce vuelos, hoteles, transportes, actividades y seguros. Los organiza por itinerario, te resume la info clave y deja listo el voucher para cuando tengas que mostrar tu reserva.',
         chip: 'Lee cualquier formato',
       },
       {
-        title: 'Tu viaje queda listo',
-        body: 'Cada documento cae en el viaje correcto — ordenado y listo para usar sin conexión. Tú solo viajas.',
+        title: 'Tu viaje listo',
+        body: 'Cada documento se asigna al viaje correcto — ordenado y disponible 100% offline. Muestra tus reservas en migraciones, aeropuertos o en la recepción del hotel, sin buscar por mails o conversaciones de WhatsApp. Tú solo preocúpate por viajar.',
         chip: 'Funciona sin conexión',
       },
     ],
@@ -85,7 +85,7 @@ export const es: Dictionary = {
       {
         key: 'edit',
         title: 'Tú tienes la última palabra',
-        body: 'Corrige cualquier campo que la IA haya leído mal, o añade documentos totalmente a mano. La IA es opcional, siempre.',
+        body: 'Corrige cualquier campo que Doku haya leído mal, o añade documentos totalmente a mano. Puedes modificar lo que necesites.',
       },
       {
         key: 'privacy',
@@ -107,7 +107,7 @@ export const es: Dictionary = {
     items: [
       {
         q: '¿Qué es Doku?',
-        a: 'Doku es una app móvil que organiza tus documentos de viaje. Le compartes tus confirmaciones de reserva — vuelos, hoteles, transporte, actividades, seguros — y la IA extrae los datos clave y agrupa todo por viaje.',
+        a: 'Doku es una app móvil que organiza tus documentos de viaje. Le compartes tus confirmaciones de reserva — vuelos, hoteles, transporte, actividades, seguros — extrae los datos clave y agrupa todo por viaje.',
       },
       {
         q: '¿Cómo organiza Doku mis reservas?',
@@ -126,8 +126,15 @@ export const es: Dictionary = {
         a: 'Tus documentos se guardan cifrados y solo son visibles para tu cuenta y para las personas con las que compartes un viaje explícitamente. La política de privacidad tiene el detalle completo.',
       },
       {
-        q: '¿Cuánto cuesta?',
-        a: 'Tu primer viaje es gratis: cada cuenta nace con un Trip Pass que se aplica solo. Después, un Trip Pass cuesta US$ 4,99 y habilita un viaje para siempre, o la suscripción anual cuesta US$ 29,99 e incluye todos tus viajes. Ambos habilitan el análisis con IA, el modo sin conexión y los viajes compartidos.',
+        q: '¿Cuánto cuesta usar Doku?',
+        a: [
+          'Tu primer viaje es 100% gratis: al crearte una cuenta, recibes automáticamente un Trip Pass gratuito.',
+          'El Trip Pass activa la magia de Doku: organiza tus vouchers y documentos de forma automática, te permite compartirlos con otros viajeros y descarga todo para usarlo offline.',
+          'Una vez usado tu primer pase, puedes elegir la opción que mejor se adapte a tu forma de viajar:',
+          '- Trip Pass individual (US$ 4,99): habilita un viaje específico para siempre.',
+          '- Viajero Frecuente - Suscripción anual (US$ 29,99): viajes ilimitados con Trip Pass durante todo el año.',
+          '¿Quieres usar Doku gratis siempre? ¡También puedes! La versión gratuita te permite guardar todos tus documentos de viaje en un solo lugar. La única diferencia es que ingresarás los datos de tus reservas de forma manual en lugar de automatizada.',
+        ].join('\n'),
       },
       {
         q: '¿iPhone o Android?',
@@ -209,7 +216,7 @@ export const es: Dictionary = {
   },
   comingSoon: {
     title: 'Aquí se está construyendo algo bueno.',
-    body: 'Doku organizará tus documentos de viaje con IA — compartes una reserva y tu viaje se arma solo. Estamos dando los últimos toques.',
+    body: 'Doku organizará tus documentos y reservas de viaje — compartes una reserva y tu viaje se arma solo. Tienes todos los comprobantes de reservas, en un solo lugar. Estamos dando los últimos toques.',
   },
   legal: {
     badgeLegal: 'Legal',
@@ -247,7 +254,8 @@ export const es: Dictionary = {
     inviteTitle: 'Te han invitado a un viaje',
     inviteDescription:
       'Alguien ha compartido un viaje contigo en Doku. Instala la aplicación para ver todos los documentos del viaje, también sin conexión.',
-    homeTitle: 'Doku — Tus documentos de viaje, organizados con IA',
+    homeTitle: 'Doku — Tus documentos de viaje, organizados en itinerario',
+    ogImageAlt: 'Doku — Todas tus reservas de viaje organizadas.',
     homeDescription:
       'Comparte el PDF de tu reserva y Doku lo lee, lo clasifica y lo archiva en tu viaje. Vuelos, hoteles, transporte y seguros — disponibles sin conexión, en inglés y español.',
     privacyDescription: 'Cómo Doku recopila, usa y protege tus datos.',
