@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 
 import { Container } from '@/components/container';
+import { Logo } from '@/components/logo';
 import { WaitlistForm } from '@/components/waitlist-form';
 import type { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
@@ -17,7 +17,7 @@ export default async function ComingSoonPage({ params }: PageProps<'/[locale]/co
   return (
     <section className="flex min-h-[70vh] items-center py-16">
       <Container className="flex max-w-xl flex-col items-center gap-6 text-center">
-        <Image src="/brand/doku-icon.png" alt="Doku" width={72} height={72} priority />
+        <Logo height={72} />
         <span className="rounded-pill bg-brand-soft px-3 py-1 text-label-medium text-brand-strong">
           {t.hero.badge}
         </span>
