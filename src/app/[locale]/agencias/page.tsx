@@ -29,7 +29,7 @@ export default async function AgenciesPage({ params }: PageProps<'/[locale]/agen
     <>
       <section className="py-16 sm:py-24">
         <Container className="max-w-3xl">
-          <span className="inline-flex items-center gap-1.5 rounded-pill bg-warning-soft px-3.5 py-1 text-label-medium uppercase text-warning">
+          <span className="inline-flex items-center gap-1.5 rounded-pill bg-warning-soft px-3.5 py-1 text-label-medium text-warning">
             <IoConstructOutline size={12} />
             {t.agencies.underConstructionBadge}
           </span>

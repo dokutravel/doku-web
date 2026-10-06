@@ -18,7 +18,7 @@ export default async function ComingSoonPage({ params }: PageProps<'/[locale]/co
     <section className="flex min-h-[70vh] items-center py-16">
       <Container className="flex max-w-xl flex-col items-center gap-6 text-center">
         <Image src="/brand/doku-icon.png" alt="Doku" width={72} height={72} priority />
-        <span className="rounded-pill bg-brand-soft px-3 py-1 text-label-medium uppercase text-brand-strong">
+        <span className="rounded-pill bg-brand-soft px-3 py-1 text-label-medium text-brand-strong">
           {t.hero.badge}
         </span>
         <h1 className="text-headline-large text-text">{t.comingSoon.title}</h1>

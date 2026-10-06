@@ -16,7 +16,7 @@ export function Hero({ locale, t }: { locale: Locale; t: Dictionary }) {
     <section className="overflow-hidden pt-12 sm:pt-20">
       <Container className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
         <div className="flex max-w-xl flex-col items-start gap-6 lg:pb-20">
-          <span className="flex items-center gap-1.5 rounded-pill bg-brand-soft px-3.5 py-1 text-label-medium uppercase text-brand-strong">
+          <span className="flex items-center gap-1.5 rounded-pill bg-brand-soft px-3.5 py-1 text-label-medium text-brand-strong">
             <IoSparkles size={12} />
             {t.hero.badge}
           </span>

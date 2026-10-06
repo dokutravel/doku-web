@@ -25,7 +25,7 @@ export function Features({ t }: { t: Dictionary }) {
     <section id="features" className="scroll-mt-16 py-16 sm:py-20">
       <Container>
         <div className="max-w-xl">
-          <span className="text-label-medium uppercase text-brand-strong">{t.features.label}</span>
+          <span className="text-label-medium text-brand-strong">{t.features.label}</span>
           <h2 className="mt-3 text-headline-medium text-text sm:text-headline-large">
             {t.features.title}
           </h2>

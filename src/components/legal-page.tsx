@@ -29,7 +29,7 @@ export function LegalPage({
     <Container className="max-w-3xl pb-24 pt-16">
       {badgeLabel && (
         <span
-          className={`inline-flex items-center gap-1.5 rounded-pill px-3.5 py-1 text-label-medium uppercase ${badgeTones[badgeTone]}`}
+          className={`inline-flex items-center gap-1.5 rounded-pill px-3.5 py-1 text-label-medium ${badgeTones[badgeTone]}`}
         >
           {BadgeIcon && <BadgeIcon size={12} />}
           {badgeLabel}

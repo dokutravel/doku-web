@@ -25,7 +25,7 @@ export function HowItWorks({ t }: { t: Dictionary }) {
   return (
     <section id="how" className="scroll-mt-16 border-t border-border bg-surface py-16 sm:py-20">
       <Container>
-        <span className="text-label-medium uppercase text-brand-strong">{t.how.label}</span>
+        <span className="text-label-medium text-brand-strong">{t.how.label}</span>
         <h2 className="mt-3 text-headline-medium text-text sm:text-headline-large">{t.how.title}</h2>
         <ol className="mt-10 grid gap-6 sm:grid-cols-3">
           {t.how.steps.map((step, i) => {
