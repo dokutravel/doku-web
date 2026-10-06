@@ -20,11 +20,42 @@ export function Faq({ t }: { t: Dictionary }) {
                   className="flex-none text-text-secondary transition-transform group-open:rotate-45"
                 />
               </summary>
-              <p className="mt-3 text-body-large text-text-secondary">{item.a}</p>
+              <Answer text={item.a} />
             </details>
           ))}
         </div>
       </Container>
     </section>
+  );
+}
+
+/** An answer is a plain string, so the FAQPage JSON-LD can take it as-is: each
+ * line is a paragraph, and consecutive lines starting with "- " form a list. */
+function Answer({ text }: { text: string }) {
+  const blocks: (string | string[])[] = [];
+  for (const line of text.split('\n')) {
+    if (line.startsWith('- ')) {
+      const last = blocks.at(-1);
+      if (Array.isArray(last)) last.push(line.slice(2));
+      else blocks.push([line.slice(2)]);
+    } else {
+      blocks.push(line);
+    }
+  }
+
+  return (
+    <div className="mt-3 flex flex-col gap-3 text-body-large text-text-secondary">
+      {blocks.map((block, i) =>
+        Array.isArray(block) ? (
+          <ul key={i} className="flex list-disc flex-col gap-1 pl-6">
+            {block.map((entry) => (
+              <li key={entry}>{entry}</li>
+            ))}
+          </ul>
+        ) : (
+          <p key={i}>{block}</p>
+        ),
+      )}
+    </div>
   );
 }
