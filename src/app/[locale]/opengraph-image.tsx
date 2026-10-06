@@ -6,20 +6,29 @@ import { ImageResponse } from 'next/og';
 import { isLocale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 
-export const size = { width: 1200, height: 630 };
-export const contentType = 'image/png';
-export const alt = 'Doku — travel documents, organized by AI';
+const size = { width: 1200, height: 630 };
+
+// The [locale] layout sets dynamicParams = false, and the image's id segment is
+// not among the prerendered params, so without this the image 404s.
+export const dynamicParams = true;
+
+// One image per locale; generateImageMetadata is what lets its alt text follow
+// the locale (a static `alt` export can only be one string).
+export function generateImageMetadata({ params }: { params: { locale: string } }) {
+  const t = getDictionary(isLocale(params.locale) ? params.locale : 'en');
+  return [{ id: 'default', alt: t.meta.ogImageAlt, size, contentType: 'image/png' }];
+}
 
 export default async function OgImage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = getDictionary(isLocale(locale) ? locale : 'en');
 
-  const [regular, semibold, icon] = await Promise.all([
+  const [regular, semibold, logo] = await Promise.all([
     readFile(join(process.cwd(), 'src/assets/fonts/manrope-400.ttf')),
     readFile(join(process.cwd(), 'src/assets/fonts/manrope-600.ttf')),
-    readFile(join(process.cwd(), 'public/brand/doku-icon.png')),
+    readFile(join(process.cwd(), 'public/brand/doku-logo.svg')),
   ]);
-  const iconSrc = `data:image/png;base64,${icon.toString('base64')}`;
+  const logoSrc = `data:image/svg+xml;base64,${logo.toString('base64')}`;
 
   return new ImageResponse(
     (
@@ -35,10 +44,9 @@ export default async function OgImage({ params }: { params: Promise<{ locale: st
           fontFamily: 'Manrope',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-          <img src={iconSrc} width={72} height={72} alt="" />
-          <span style={{ fontSize: 44, fontWeight: 600, color: '#141414' }}>doku</span>
-        </div>
+        {/* The full logo, mark and wordmark as one asset (as in <Logo />);
+            175×92 is its viewBox. */}
+        <img src={logoSrc} width={175} height={92} alt="Doku" />
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 900 }}>
           <span style={{ fontSize: 64, lineHeight: 1.15, fontWeight: 400, color: '#141414' }}>
             {t.hero.title}
