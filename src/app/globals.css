@@ -21,6 +21,7 @@
   --background-selected: #f0f6e5;
   --text: #141414;
   --text-secondary: #555555;
+  --text-muted: #343434;
   --link: #224262;
   --border: #eaeaea;
   --card-border: #d0d0d0;
@@ -66,6 +67,7 @@
   --color-background-selected: var(--background-selected);
   --color-text: var(--text);
   --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
   --color-link: var(--link);
   --color-border: var(--border);
   --color-card-border: var(--card-border);
