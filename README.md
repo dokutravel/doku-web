@@ -50,8 +50,10 @@ Manrope with size-based (not weight-based) hierarchy.
   variants, 52px min height, `Radius.md`, 0.65 pressed opacity. Their classes live
   in `src/components/button-styles.ts`, used by `Button` and `ButtonLink` — never
   style a button inline. The hover is the only web-only addition.
-- The brand icon is the app's `assets/images/doku-brand/icon.png`, copied — never
-  redrawn.
+- The logo is `public/brand/doku-logo.svg` — mark and wordmark as one asset, so
+  their proportions never drift. Render it through `<Logo />` (header, footer,
+  invite, coming-soon); the social image embeds the same file. Never redraw it.
+  The favicons (`src/app/icon.png`, `apple-icon.png`) are separate files.
 
 ## i18n
 
