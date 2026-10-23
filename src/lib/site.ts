@@ -4,6 +4,9 @@ export const siteUrl = 'https://dokutravel.com';
 
 export const contactEmail = 'contact@dokutravel.com';
 
+/** The waitlist sign-up form, hosted on Tally. */
+export const waitlistUrl = 'https://tally.so/r/2Eqple';
+
 /** Absolute URL for a localized path, e.g. localeUrl('es', '/privacy'). */
 export function localeUrl(locale: Locale, path = ''): string {
   return `${siteUrl}/${locale}${path}`;

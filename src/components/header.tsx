@@ -7,6 +7,7 @@ import { Logo } from '@/components/logo';
 import { MobileMenu, type NavLink } from '@/components/mobile-menu';
 import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/en';
+import { waitlistUrl } from '@/lib/site';
 
 export function Header({ locale, t }: { locale: Locale; t: Dictionary }) {
   const home = `/${locale}`;
@@ -16,7 +17,7 @@ export function Header({ locale, t }: { locale: Locale; t: Dictionary }) {
     { href: `${home}#faq`, label: t.nav.faq },
     { href: `${home}/agencias`, label: t.nav.agencies },
   ];
-  const cta: NavLink = { href: `${home}#waitlist`, label: t.nav.joinWaitlist };
+  const cta: NavLink = { href: waitlistUrl, label: t.nav.joinWaitlist };
 
   return (
     <header className="sticky top-0 z-10 border-b border-border bg-background/90 backdrop-blur">

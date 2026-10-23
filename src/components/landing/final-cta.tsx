@@ -1,9 +1,9 @@
+import { ButtonLink } from '@/components/button-link';
 import { Container } from '@/components/container';
-import { WaitlistForm } from '@/components/waitlist-form';
-import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/en';
+import { waitlistUrl } from '@/lib/site';
 
-export function FinalCta({ locale, t }: { locale: Locale; t: Dictionary }) {
+export function FinalCta({ t }: { t: Dictionary }) {
   return (
     <section className="py-16 sm:py-24">
       <Container>
@@ -12,8 +12,8 @@ export function FinalCta({ locale, t }: { locale: Locale; t: Dictionary }) {
             {t.finalCta.title}
           </h2>
           <p className="mt-3 text-body-large text-text-secondary">{t.finalCta.body}</p>
-          <div className="mx-auto mt-8 max-w-md text-left">
-            <WaitlistForm locale={locale} labels={t.waitlist} />
+          <div className="mt-8 flex justify-center">
+            <ButtonLink href={waitlistUrl}>{t.nav.joinWaitlist}</ButtonLink>
           </div>
         </div>
       </Container>

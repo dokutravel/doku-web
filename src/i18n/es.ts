@@ -10,7 +10,7 @@ export const es: Dictionary = {
     features: 'Funciones',
     faq: 'FAQ',
     agencies: 'Para agencias',
-    joinWaitlist: 'Únete a la lista',
+    joinWaitlist: 'Unirme a la lista de espera',
     openMenu: 'Abrir menú',
     closeMenu: 'Cerrar menú',
   },
@@ -19,6 +19,7 @@ export const es: Dictionary = {
     subtitle:
       'Basta de buscar entre capturas de pantalla o mails. Doku organiza tus documentos en un itinerario de viaje, listos para usar offline.',
     badge: 'Beta privada — únete antes',
+    ctaLead: '¡Sé de los primeros en probar Doku!',
     chips: {
       platforms: 'iOS y Android',
       offline: 'Funciona sin conexión',
@@ -143,7 +144,7 @@ export const es: Dictionary = {
     ],
   },
   finalCta: {
-    title: 'Tu próximo viaje, ya organizado',
+    title: 'Tus vouchers y reservas de viaje, convertidos en un itinerario',
     body: 'Únete a la lista de espera y sé de los primeros cuando Doku lance.',
   },
   phone: {
