@@ -65,11 +65,11 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
           })),
         }}
       />
-      <Hero locale={locale as Locale} t={t} />
+      <Hero t={t} />
       <HowItWorks t={t} />
       <Features t={t} />
       <Faq t={t} />
-      <FinalCta locale={locale as Locale} t={t} />
+      <FinalCta t={t} />
     </>
   );
 }

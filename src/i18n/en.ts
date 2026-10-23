@@ -17,6 +17,7 @@ export const en = {
     subtitle:
       'Stop digging through screenshots or emails. Doku organizes your documents into a travel itinerary, ready to use offline.',
     badge: 'Private beta — join early',
+    ctaLead: 'Be one of the first to try Doku!',
     chips: {
       platforms: 'iOS & Android',
       offline: 'Works offline',
@@ -141,7 +142,7 @@ export const en = {
     ],
   },
   finalCta: {
-    title: 'Your next trip, already organized',
+    title: 'Travel documents into an itinerary',
     body: 'Join the waitlist and be first in when Doku launches.',
   },
   phone: {

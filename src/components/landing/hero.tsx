@@ -5,13 +5,13 @@ import {
   IoSparkles,
 } from 'react-icons/io5';
 
+import { ButtonLink } from '@/components/button-link';
 import { Container } from '@/components/container';
 import { PhoneMock } from '@/components/phone-mock';
-import { WaitlistForm } from '@/components/waitlist-form';
-import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/en';
+import { waitlistUrl } from '@/lib/site';
 
-export function Hero({ locale, t }: { locale: Locale; t: Dictionary }) {
+export function Hero({ t }: { t: Dictionary }) {
   return (
     <section className="overflow-hidden pt-12 sm:pt-20">
       <Container className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
@@ -22,8 +22,9 @@ export function Hero({ locale, t }: { locale: Locale; t: Dictionary }) {
           </span>
           <h1 className="text-display-small text-text sm:text-display-medium">{t.hero.title}</h1>
           <p className="text-body-large text-text-secondary">{t.hero.subtitle}</p>
-          <div id="waitlist" className="w-full max-w-md scroll-mt-24">
-            <WaitlistForm locale={locale} labels={t.waitlist} />
+          <div className="flex flex-col items-start gap-3">
+            <p className="text-title-medium text-text">{t.hero.ctaLead}</p>
+            <ButtonLink href={waitlistUrl}>{t.nav.joinWaitlist}</ButtonLink>
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <span className="flex items-center gap-1.5 text-body-small text-text-secondary">
