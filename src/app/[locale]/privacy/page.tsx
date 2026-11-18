@@ -8,7 +8,7 @@ import type { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { languageAlternates, localeUrl } from '@/lib/site';
 
-const UPDATED = { es: '11 de septiembre de 2026', en: 'September 11, 2026' };
+const UPDATED = { es: '18 de noviembre de 2026', en: 'November 18, 2026' };
 
 export async function generateMetadata({ params }: PageProps<'/[locale]/privacy'>): Promise<Metadata> {
   const { locale } = await params;
