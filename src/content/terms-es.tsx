@@ -22,6 +22,7 @@ export function TermsEs() {
       <p>El servicio puede cambiar, interrumpirse o limitarse mientras sigue en desarrollo.</p>
 
       <h2>Tu cuenta</h2>
+      <p>Para usar Doku tienes que tener al menos 18 años.</p>
       <p>
         Para usar Doku necesitas una cuenta de Google o de Apple. Eres responsable de la
         actividad que ocurra en tu cuenta y de mantener seguro el acceso a tu dispositivo.

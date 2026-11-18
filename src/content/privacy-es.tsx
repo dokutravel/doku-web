@@ -222,7 +222,7 @@ export function PrivacyEs() {
 
       <h2>Menores</h2>
       <p>
-        Doku no está dirigida a menores de 13 años y no recopilamos sus datos a sabiendas. Si
+        Doku no está dirigida a menores de 18 años y no recopilamos sus datos a sabiendas. Si
         crees que un menor nos dio sus datos, escríbenos a{' '}
         <a href={`mailto:${contactEmail}`}>{contactEmail}</a> y los eliminaremos.
       </p>

@@ -213,10 +213,10 @@ export function PrivacyEn() {
         complaints and claims from anyone who believes their rights have been affected.
       </p>
 
-      <h2>Children</h2>
+      <h2>Minors</h2>
       <p>
-        Doku is not directed at children under 13 and we do not knowingly collect their
-        data. If you believe a child has given us their data, write to{' '}
+        Doku is not directed at anyone under 18 and we do not knowingly collect their
+        data. If you believe a minor has given us their data, write to{' '}
         <a href={`mailto:${contactEmail}`}>{contactEmail}</a> and we will delete it.
       </p>
 
