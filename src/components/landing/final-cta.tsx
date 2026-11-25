@@ -5,7 +5,7 @@ import { waitlistUrl } from '@/lib/site';
 
 export function FinalCta({ t }: { t: Dictionary }) {
   return (
-    <section className="py-16 sm:py-24">
+    <section className="border-t border-border bg-surface py-16 sm:py-24">
       <Container>
         <div className="rounded-lg border border-card-border bg-brand-soft px-6 py-10 text-center sm:px-12 sm:py-16">
           <h2 className="text-headline-medium text-text sm:text-headline-large">
