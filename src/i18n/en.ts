@@ -141,6 +141,16 @@ export const en = {
       },
     ],
   },
+  support: {
+    /** The section's anchor, localized: /en#support, /es#soporte. */
+    anchor: 'support',
+    title: 'Need help?',
+    body: "If you have a question, an issue with the app or a suggestion, write to us. We're a small team of travelers and we read every message.",
+    responseTime: "We'll get back to you within 2 business days.",
+    tip: 'When you write, tell us what happened and, if you can, include a screenshot. That way we can help you faster.',
+    faqPrompt: 'Your question may already be answered in the ',
+    faqLink: 'FAQ',
+  },
   finalCta: {
     title: 'Travel documents into an itinerary',
     body: 'Join the waitlist and be first in when Doku launches.',

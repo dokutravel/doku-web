@@ -143,6 +143,15 @@ export const es: Dictionary = {
       },
     ],
   },
+  support: {
+    anchor: 'soporte',
+    title: '¿Necesitas ayuda?',
+    body: 'Si tienes alguna duda, un problema con la app o una sugerencia, escríbenos. Somos un equipo chico de viajeros y leemos cada mensaje.',
+    responseTime: 'Te respondemos en un plazo de 48 horas hábiles.',
+    tip: 'Cuando nos escribas, cuéntanos qué pasó y, si puedes, agrega una captura de pantalla. Así podemos ayudarte más rápido.',
+    faqPrompt: 'Quizás tu duda ya esté respondida en las ',
+    faqLink: 'preguntas frecuentes',
+  },
   finalCta: {
     title: 'Tus vouchers y reservas de viaje, convertidos en un itinerario',
     body: 'Únete a la lista de espera y sé de los primeros cuando Doku lance.',

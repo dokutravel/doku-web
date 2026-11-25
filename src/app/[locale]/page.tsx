@@ -6,6 +6,7 @@ import { Features } from '@/components/landing/features';
 import { FinalCta } from '@/components/landing/final-cta';
 import { Hero } from '@/components/landing/hero';
 import { HowItWorks } from '@/components/landing/how-it-works';
+import { Support } from '@/components/landing/support';
 import type { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { languageAlternates, localeUrl, siteUrl } from '@/lib/site';
@@ -69,6 +70,7 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
       <HowItWorks t={t} />
       <Features t={t} />
       <Faq t={t} />
+      <Support t={t} />
       <FinalCta t={t} />
     </>
   );
