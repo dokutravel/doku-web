@@ -4,6 +4,9 @@ export const siteUrl = 'https://dokutravel.com';
 
 export const contactEmail = 'contact@dokutravel.com';
 
+/** Where the landing's support section and the store listings send people. */
+export const supportEmail = 'soporte@dokutravel.com';
+
 /** The waitlist sign-up form, hosted on Tally. */
 export const waitlistUrl = 'https://tally.so/r/2Eqple';
 
